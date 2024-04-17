@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Tue Apr 16 00:20:41 2024
+# Process ID: 27244
+# Current directory: C:/Users/ktzam/Downloads/sincos/sincos.runs/sncos
+# Command line: vivado.exe -log sincos.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source sincos.tcl -notrace
+# Log file: C:/Users/ktzam/Downloads/sincos/sincos.runs/sncos/sincos.vdi
+# Journal file: C:/Users/ktzam/Downloads/sincos/sincos.runs/sncos\vivado.jou
+#-----------------------------------------------------------
+source sincos.tcl -notrace

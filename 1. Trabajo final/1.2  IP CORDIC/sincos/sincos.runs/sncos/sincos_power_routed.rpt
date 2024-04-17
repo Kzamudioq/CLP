@@ -1,0 +1,498 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
+| Date             : Tue Apr 16 00:21:43 2024
+| Host             : LAPTOP-G5K3UH8C running 64-bit major release  (build 9200)
+| Command          : report_power -file sincos_power_routed.rpt -pb sincos_power_summary_routed.pb -rpx sincos_power_routed.rpx
+| Design           : sincos
+| Device           : xc7z010clg400-1
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+-----------------------------------+
+| Total On-Chip Power (W)  | 118.822 (Junction temp exceeded!) |
+| Design Power Budget (W)  | Unspecified*                      |
+| Power Budget Margin (W)  | NA                                |
+| Dynamic (W)              | 118.073                           |
+| Device Static (W)        | 0.749                             |
+| Effective TJA (C/W)      | 11.5                              |
+| Max Ambient (C)          | 0.0                               |
+| Junction Temperature (C) | 125.0                             |
+| Confidence Level         | Low                               |
+| Setting File             | ---                               |
+| Simulation Activity File | ---                               |
+| Design Nets Matched      | NA                                |
++--------------------------+-----------------------------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++-------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
++-------------------------+-----------+----------+-----------+-----------------+
+| Slice Logic             |    13.288 |     2655 |       --- |             --- |
+|   LUT as Logic          |    10.525 |      965 |     17600 |            5.48 |
+|   CARRY4                |     1.697 |      260 |      4400 |            5.91 |
+|   Register              |     1.049 |      996 |     35200 |            2.83 |
+|   LUT as Shift Register |     0.011 |        5 |      6000 |            0.08 |
+|   BUFG                  |     0.006 |        1 |        32 |            3.13 |
+|   Others                |     0.000 |      408 |       --- |             --- |
+| Signals                 |    10.712 |     1266 |       --- |             --- |
+| I/O                     |    94.073 |       51 |       100 |           51.00 |
+| Static Power            |     0.749 |          |           |                 |
+| Total                   |   118.822 |          |           |                 |
++-------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++-----------+-------------+-----------+-------------+------------+
+| Vccint    |       1.000 |    24.201 |      24.072 |      0.129 |
+| Vccaux    |       1.800 |     3.485 |       3.445 |      0.040 |
+| Vcco33    |       3.300 |    26.607 |      26.606 |      0.001 |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.011 |       0.000 |      0.011 |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
+| MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccpint   |       1.000 |     0.473 |       0.000 |      0.473 |
+| Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |
+| Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |
+| Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco_mio0 |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco_mio1 |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
++-----------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                             |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                                    |
+| Clock nodes activity        | Low        | User specified less than 75% of clocks                 | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view           |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views         |
+| Device models               | High       | Device models are Production                           |                                                                                                                    |
+|                             |            |                                                        |                                                                                                                    |
+| Overall confidence level    | Low        |                                                        |                                                                                                                    |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+------------------------+
+| Ambient Temp (C)      | 25.0                   |
+| ThetaJA (C/W)         | 11.5                   |
+| Airflow (LFM)         | 250                    |
+| Heat Sink             | none                   |
+| ThetaSA (C/W)         | 0.0                    |
+| Board Selection       | medium (10"x10")       |
+| # of Board Layers     | 8to11 (8 to 11 Layers) |
+| Board Temperature (C) | 25.0                   |
++-----------------------+------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++-------+--------+-----------------+
+| Clock | Domain | Constraint (ns) |
++-------+--------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++----------------------------------------------------------+-----------+
+| Name                                                     | Power (W) |
++----------------------------------------------------------+-----------+
+| sincos                                                   |   118.073 |
+|   cordic_0_inst                                          |    23.872 |
+|     U0                                                   |    23.872 |
+|       i_synth                                            |    23.872 |
+|         i_nd_to_rdy                                      |     0.007 |
+|         i_synth                                          |    23.866 |
+|           gen_cordic.cordic_engine                       |    21.194 |
+|             gen_para_arch.gen_iteration[0].eng           |     1.110 |
+|               data_slice                                 |     0.659 |
+|                 x_plus_y_shift                           |     0.436 |
+|                   inst                                   |     0.436 |
+|                     i_baseblox.i_baseblox_addsub         |     0.436 |
+|                       no_pipelining.the_addsub           |     0.436 |
+|                         i_lut6.i_lut6_addsub             |     0.436 |
+|                           i_q.i_simple.qreg              |     0.215 |
+|                 y_plus_x_shift                           |     0.222 |
+|                   inst                                   |     0.222 |
+|                     i_baseblox.i_baseblox_addsub         |     0.222 |
+|                       no_pipelining.the_addsub           |     0.222 |
+|                         i_lut6.i_lut6_addsub             |     0.222 |
+|                           i_q.i_simple.qreg              |     0.168 |
+|               phase_slice                                |     0.451 |
+|                 phase_plus_atan                          |     0.451 |
+|                   inst                                   |     0.451 |
+|                     i_baseblox.i_baseblox_addsub         |     0.451 |
+|                       no_pipelining.the_addsub           |     0.451 |
+|                         i_lut6.i_lut6_addsub             |     0.451 |
+|                           i_q.i_simple.qreg              |     0.294 |
+|             gen_para_arch.gen_iteration[10].eng          |     1.633 |
+|               data_slice                                 |     1.111 |
+|                 x_plus_y_shift                           |     0.595 |
+|                   inst                                   |     0.595 |
+|                     i_baseblox.i_baseblox_addsub         |     0.595 |
+|                       no_pipelining.the_addsub           |     0.595 |
+|                         i_lut6.i_lut6_addsub             |     0.595 |
+|                           i_q.i_simple.qreg              |     0.265 |
+|                 y_plus_x_shift                           |     0.516 |
+|                   inst                                   |     0.516 |
+|                     i_baseblox.i_baseblox_addsub         |     0.516 |
+|                       no_pipelining.the_addsub           |     0.516 |
+|                         i_lut6.i_lut6_addsub             |     0.516 |
+|                           i_q.i_simple.qreg              |     0.204 |
+|               phase_slice                                |     0.523 |
+|                 phase_plus_atan                          |     0.523 |
+|                   inst                                   |     0.523 |
+|                     i_baseblox.i_baseblox_addsub         |     0.523 |
+|                       no_pipelining.the_addsub           |     0.523 |
+|                         i_lut6.i_lut6_addsub             |     0.523 |
+|                           i_q.i_simple.qreg              |     0.286 |
+|             gen_para_arch.gen_iteration[11].eng          |     1.646 |
+|               data_slice                                 |     1.152 |
+|                 x_plus_y_shift                           |     0.566 |
+|                   inst                                   |     0.566 |
+|                     i_baseblox.i_baseblox_addsub         |     0.566 |
+|                       no_pipelining.the_addsub           |     0.566 |
+|                         i_lut6.i_lut6_addsub             |     0.566 |
+|                           i_q.i_simple.qreg              |     0.236 |
+|                 y_plus_x_shift                           |     0.587 |
+|                   inst                                   |     0.587 |
+|                     i_baseblox.i_baseblox_addsub         |     0.587 |
+|                       no_pipelining.the_addsub           |     0.587 |
+|                         i_lut6.i_lut6_addsub             |     0.587 |
+|                           i_q.i_simple.qreg              |     0.268 |
+|               phase_slice                                |     0.493 |
+|                 phase_plus_atan                          |     0.493 |
+|                   inst                                   |     0.493 |
+|                     i_baseblox.i_baseblox_addsub         |     0.493 |
+|                       no_pipelining.the_addsub           |     0.493 |
+|                         i_lut6.i_lut6_addsub             |     0.493 |
+|                           i_q.i_simple.qreg              |     0.269 |
+|             gen_para_arch.gen_iteration[12].eng          |     1.416 |
+|               cntrl                                      |     0.009 |
+|                 cntrl_vect_dly                           |     0.009 |
+|               data_slice                                 |     1.119 |
+|                 x_plus_y_shift                           |     0.512 |
+|                   inst                                   |     0.512 |
+|                     i_baseblox.i_baseblox_addsub         |     0.512 |
+|                       no_pipelining.the_addsub           |     0.512 |
+|                         i_lut6.i_lut6_addsub             |     0.512 |
+|                           i_q.i_simple.qreg              |     0.194 |
+|                 y_plus_x_shift                           |     0.607 |
+|                   inst                                   |     0.607 |
+|                     i_baseblox.i_baseblox_addsub         |     0.607 |
+|                       no_pipelining.the_addsub           |     0.607 |
+|                         i_lut6.i_lut6_addsub             |     0.607 |
+|                           i_q.i_simple.qreg              |     0.276 |
+|               phase_slice                                |     0.287 |
+|                 phase_plus_atan                          |     0.287 |
+|                   inst                                   |     0.287 |
+|                     i_baseblox.i_baseblox_addsub         |     0.287 |
+|                       no_pipelining.the_addsub           |     0.287 |
+|                         i_lut6.i_lut6_addsub             |     0.287 |
+|                           i_q.i_simple.qreg              |     0.071 |
+|             gen_para_arch.gen_iteration[13].eng          |     0.909 |
+|               cntrl                                      |     0.048 |
+|                 cntrl_vect_dly                           |     0.048 |
+|               data_slice                                 |     0.861 |
+|                 x_plus_y_shift                           |     0.401 |
+|                   inst                                   |     0.401 |
+|                     i_baseblox.i_baseblox_addsub         |     0.401 |
+|                       no_pipelining.the_addsub           |     0.401 |
+|                         i_lut6.i_lut6_addsub             |     0.401 |
+|                           i_q.i_simple.qreg              |     0.073 |
+|                 y_plus_x_shift                           |     0.460 |
+|                   inst                                   |     0.460 |
+|                     i_baseblox.i_baseblox_addsub         |     0.460 |
+|                       no_pipelining.the_addsub           |     0.460 |
+|                         i_lut6.i_lut6_addsub             |     0.460 |
+|                           i_q.i_simple.qreg              |     0.145 |
+|             gen_para_arch.gen_iteration[1].eng           |     1.425 |
+|               data_slice                                 |     0.957 |
+|                 x_plus_y_shift                           |     0.472 |
+|                   inst                                   |     0.472 |
+|                     i_baseblox.i_baseblox_addsub         |     0.472 |
+|                       no_pipelining.the_addsub           |     0.472 |
+|                         i_lut6.i_lut6_addsub             |     0.472 |
+|                           i_q.i_simple.qreg              |     0.208 |
+|                 y_plus_x_shift                           |     0.485 |
+|                   inst                                   |     0.485 |
+|                     i_baseblox.i_baseblox_addsub         |     0.485 |
+|                       no_pipelining.the_addsub           |     0.485 |
+|                         i_lut6.i_lut6_addsub             |     0.485 |
+|                           i_q.i_simple.qreg              |     0.237 |
+|               phase_slice                                |     0.468 |
+|                 phase_plus_atan                          |     0.468 |
+|                   inst                                   |     0.468 |
+|                     i_baseblox.i_baseblox_addsub         |     0.468 |
+|                       no_pipelining.the_addsub           |     0.468 |
+|                         i_lut6.i_lut6_addsub             |     0.468 |
+|                           i_q.i_simple.qreg              |     0.261 |
+|             gen_para_arch.gen_iteration[2].eng           |     1.559 |
+|               data_slice                                 |     1.076 |
+|                 x_plus_y_shift                           |     0.563 |
+|                   inst                                   |     0.563 |
+|                     i_baseblox.i_baseblox_addsub         |     0.563 |
+|                       no_pipelining.the_addsub           |     0.563 |
+|                         i_lut6.i_lut6_addsub             |     0.563 |
+|                           i_q.i_simple.qreg              |     0.228 |
+|                 y_plus_x_shift                           |     0.513 |
+|                   inst                                   |     0.513 |
+|                     i_baseblox.i_baseblox_addsub         |     0.513 |
+|                       no_pipelining.the_addsub           |     0.513 |
+|                         i_lut6.i_lut6_addsub             |     0.513 |
+|                           i_q.i_simple.qreg              |     0.200 |
+|               phase_slice                                |     0.482 |
+|                 phase_plus_atan                          |     0.482 |
+|                   inst                                   |     0.482 |
+|                     i_baseblox.i_baseblox_addsub         |     0.482 |
+|                       no_pipelining.the_addsub           |     0.482 |
+|                         i_lut6.i_lut6_addsub             |     0.482 |
+|                           i_q.i_simple.qreg              |     0.256 |
+|             gen_para_arch.gen_iteration[3].eng           |     1.646 |
+|               data_slice                                 |     1.158 |
+|                 x_plus_y_shift                           |     0.615 |
+|                   inst                                   |     0.615 |
+|                     i_baseblox.i_baseblox_addsub         |     0.615 |
+|                       no_pipelining.the_addsub           |     0.615 |
+|                         i_lut6.i_lut6_addsub             |     0.615 |
+|                           i_q.i_simple.qreg              |     0.283 |
+|                 y_plus_x_shift                           |     0.543 |
+|                   inst                                   |     0.543 |
+|                     i_baseblox.i_baseblox_addsub         |     0.543 |
+|                       no_pipelining.the_addsub           |     0.543 |
+|                         i_lut6.i_lut6_addsub             |     0.543 |
+|                           i_q.i_simple.qreg              |     0.238 |
+|               phase_slice                                |     0.488 |
+|                 phase_plus_atan                          |     0.488 |
+|                   inst                                   |     0.488 |
+|                     i_baseblox.i_baseblox_addsub         |     0.488 |
+|                       no_pipelining.the_addsub           |     0.488 |
+|                         i_lut6.i_lut6_addsub             |     0.488 |
+|                           i_q.i_simple.qreg              |     0.298 |
+|             gen_para_arch.gen_iteration[4].eng           |     1.589 |
+|               data_slice                                 |     1.101 |
+|                 x_plus_y_shift                           |     0.502 |
+|                   inst                                   |     0.502 |
+|                     i_baseblox.i_baseblox_addsub         |     0.502 |
+|                       no_pipelining.the_addsub           |     0.502 |
+|                         i_lut6.i_lut6_addsub             |     0.502 |
+|                           i_q.i_simple.qreg              |     0.184 |
+|                 y_plus_x_shift                           |     0.599 |
+|                   inst                                   |     0.599 |
+|                     i_baseblox.i_baseblox_addsub         |     0.599 |
+|                       no_pipelining.the_addsub           |     0.599 |
+|                         i_lut6.i_lut6_addsub             |     0.599 |
+|                           i_q.i_simple.qreg              |     0.264 |
+|               phase_slice                                |     0.487 |
+|                 phase_plus_atan                          |     0.487 |
+|                   inst                                   |     0.487 |
+|                     i_baseblox.i_baseblox_addsub         |     0.487 |
+|                       no_pipelining.the_addsub           |     0.487 |
+|                         i_lut6.i_lut6_addsub             |     0.487 |
+|                           i_q.i_simple.qreg              |     0.259 |
+|             gen_para_arch.gen_iteration[5].eng           |     1.708 |
+|               data_slice                                 |     1.204 |
+|                 x_plus_y_shift                           |     0.596 |
+|                   inst                                   |     0.596 |
+|                     i_baseblox.i_baseblox_addsub         |     0.596 |
+|                       no_pipelining.the_addsub           |     0.596 |
+|                         i_lut6.i_lut6_addsub             |     0.596 |
+|                           i_q.i_simple.qreg              |     0.267 |
+|                 y_plus_x_shift                           |     0.607 |
+|                   inst                                   |     0.607 |
+|                     i_baseblox.i_baseblox_addsub         |     0.607 |
+|                       no_pipelining.the_addsub           |     0.607 |
+|                         i_lut6.i_lut6_addsub             |     0.607 |
+|                           i_q.i_simple.qreg              |     0.279 |
+|               phase_slice                                |     0.504 |
+|                 phase_plus_atan                          |     0.504 |
+|                   inst                                   |     0.504 |
+|                     i_baseblox.i_baseblox_addsub         |     0.504 |
+|                       no_pipelining.the_addsub           |     0.504 |
+|                         i_lut6.i_lut6_addsub             |     0.504 |
+|                           i_q.i_simple.qreg              |     0.268 |
+|             gen_para_arch.gen_iteration[6].eng           |     1.565 |
+|               data_slice                                 |     1.053 |
+|                 x_plus_y_shift                           |     0.542 |
+|                   inst                                   |     0.542 |
+|                     i_baseblox.i_baseblox_addsub         |     0.542 |
+|                       no_pipelining.the_addsub           |     0.542 |
+|                         i_lut6.i_lut6_addsub             |     0.542 |
+|                           i_q.i_simple.qreg              |     0.224 |
+|                 y_plus_x_shift                           |     0.511 |
+|                   inst                                   |     0.511 |
+|                     i_baseblox.i_baseblox_addsub         |     0.511 |
+|                       no_pipelining.the_addsub           |     0.511 |
+|                         i_lut6.i_lut6_addsub             |     0.511 |
+|                           i_q.i_simple.qreg              |     0.214 |
+|               phase_slice                                |     0.513 |
+|                 phase_plus_atan                          |     0.513 |
+|                   inst                                   |     0.513 |
+|                     i_baseblox.i_baseblox_addsub         |     0.513 |
+|                       no_pipelining.the_addsub           |     0.513 |
+|                         i_lut6.i_lut6_addsub             |     0.513 |
+|                           i_q.i_simple.qreg              |     0.279 |
+|             gen_para_arch.gen_iteration[7].eng           |     1.665 |
+|               data_slice                                 |     1.187 |
+|                 x_plus_y_shift                           |     0.613 |
+|                   inst                                   |     0.613 |
+|                     i_baseblox.i_baseblox_addsub         |     0.613 |
+|                       no_pipelining.the_addsub           |     0.613 |
+|                         i_lut6.i_lut6_addsub             |     0.613 |
+|                           i_q.i_simple.qreg              |     0.309 |
+|                 y_plus_x_shift                           |     0.574 |
+|                   inst                                   |     0.574 |
+|                     i_baseblox.i_baseblox_addsub         |     0.574 |
+|                       no_pipelining.the_addsub           |     0.574 |
+|                         i_lut6.i_lut6_addsub             |     0.574 |
+|                           i_q.i_simple.qreg              |     0.245 |
+|               phase_slice                                |     0.478 |
+|                 phase_plus_atan                          |     0.478 |
+|                   inst                                   |     0.478 |
+|                     i_baseblox.i_baseblox_addsub         |     0.478 |
+|                       no_pipelining.the_addsub           |     0.478 |
+|                         i_lut6.i_lut6_addsub             |     0.478 |
+|                           i_q.i_simple.qreg              |     0.244 |
+|             gen_para_arch.gen_iteration[8].eng           |     1.632 |
+|               data_slice                                 |     1.141 |
+|                 x_plus_y_shift                           |     0.567 |
+|                   inst                                   |     0.567 |
+|                     i_baseblox.i_baseblox_addsub         |     0.567 |
+|                       no_pipelining.the_addsub           |     0.567 |
+|                         i_lut6.i_lut6_addsub             |     0.567 |
+|                           i_q.i_simple.qreg              |     0.229 |
+|                 y_plus_x_shift                           |     0.574 |
+|                   inst                                   |     0.574 |
+|                     i_baseblox.i_baseblox_addsub         |     0.574 |
+|                       no_pipelining.the_addsub           |     0.574 |
+|                         i_lut6.i_lut6_addsub             |     0.574 |
+|                           i_q.i_simple.qreg              |     0.274 |
+|               phase_slice                                |     0.491 |
+|                 phase_plus_atan                          |     0.491 |
+|                   inst                                   |     0.491 |
+|                     i_baseblox.i_baseblox_addsub         |     0.491 |
+|                       no_pipelining.the_addsub           |     0.491 |
+|                         i_lut6.i_lut6_addsub             |     0.491 |
+|                           i_q.i_simple.qreg              |     0.255 |
+|             gen_para_arch.gen_iteration[9].eng           |     1.691 |
+|               data_slice                                 |     1.130 |
+|                 x_plus_y_shift                           |     0.554 |
+|                   inst                                   |     0.554 |
+|                     i_baseblox.i_baseblox_addsub         |     0.554 |
+|                       no_pipelining.the_addsub           |     0.554 |
+|                         i_lut6.i_lut6_addsub             |     0.554 |
+|                           i_q.i_simple.qreg              |     0.229 |
+|                 y_plus_x_shift                           |     0.576 |
+|                   inst                                   |     0.576 |
+|                     i_baseblox.i_baseblox_addsub         |     0.576 |
+|                       no_pipelining.the_addsub           |     0.576 |
+|                         i_lut6.i_lut6_addsub             |     0.576 |
+|                           i_q.i_simple.qreg              |     0.254 |
+|               phase_slice                                |     0.562 |
+|                 phase_plus_atan                          |     0.562 |
+|                   inst                                   |     0.562 |
+|                     i_baseblox.i_baseblox_addsub         |     0.562 |
+|                       no_pipelining.the_addsub           |     0.562 |
+|                         i_lut6.i_lut6_addsub             |     0.562 |
+|                           i_q.i_simple.qreg              |     0.301 |
+|           gen_cordic.input_stage                         |     1.033 |
+|             gen_rotation.gen_rot_control.gen_nd_cr       |     0.000 |
+|             gen_rotation.gen_rot_phase.gen_phase_1_4quad |     0.067 |
+|               inst                                       |     0.066 |
+|                 i_baseblox.i_baseblox_addsub             |     0.066 |
+|                   no_pipelining.the_addsub               |     0.066 |
+|                     i_lut6.i_lut6_addsub                 |     0.066 |
+|                       i_q.i_simple.qreg                  |     0.022 |
+|             gen_rotation.gen_rot_phase.gen_phase_2_4quad |     0.149 |
+|               inst                                       |     0.149 |
+|                 i_baseblox.i_baseblox_addsub             |     0.149 |
+|                   no_pipelining.the_addsub               |     0.149 |
+|                     i_lut6.i_lut6_addsub                 |     0.149 |
+|                       i_q.i_simple.qreg                  |     0.091 |
+|             gen_rotation.gen_rot_phase.gen_phase_3_4quad |     0.068 |
+|               inst                                       |     0.068 |
+|                 i_baseblox.i_baseblox_addsub             |     0.068 |
+|                   no_pipelining.the_addsub               |     0.068 |
+|                     i_lut6.i_lut6_addsub                 |     0.068 |
+|                       i_q.i_simple.qreg                  |     0.024 |
+|             gen_rotation.gen_rot_phase.gen_phase_4quad   |     0.159 |
+|               inst                                       |     0.159 |
+|                 i_baseblox.i_baseblox_addsub             |     0.159 |
+|                   no_pipelining.the_addsub               |     0.159 |
+|                     i_lut6.i_lut6_addsub                 |     0.159 |
+|                       i_q.i_simple.qreg                  |     0.103 |
+|             gen_rotation.gen_rot_phase.gen_phase_cr      |     0.213 |
+|             gen_rotation.gen_rot_phase.gen_phase_int_dly |     0.044 |
+|           gen_cordic.output_stage                        |     1.639 |
+|             gen_rotation.gen_rdy_cr                      |     0.000 |
+|             gen_rotation.gen_rotate.gen_data_x_addsub    |     0.260 |
+|               inst                                       |     0.260 |
+|                 i_baseblox.i_baseblox_addsub             |     0.260 |
+|                   no_pipelining.the_addsub               |     0.260 |
+|                     i_lut6.i_lut6_addsub                 |     0.260 |
+|                       i_q.i_simple.qreg                  |     0.085 |
+|             gen_rotation.gen_rotate.gen_data_x_cr        |     0.135 |
+|             gen_rotation.gen_rotate.gen_data_y_addsub    |     0.279 |
+|               inst                                       |     0.279 |
+|                 i_baseblox.i_baseblox_addsub             |     0.279 |
+|                   no_pipelining.the_addsub               |     0.279 |
+|                     i_lut6.i_lut6_addsub                 |     0.279 |
+|                       i_q.i_simple.qreg                  |     0.078 |
+|             gen_rotation.gen_rotate.gen_data_y_cr        |     0.111 |
+|             gen_rotation.gen_rotate.gen_swap_x_y_reg     |     0.023 |
+|             gen_x_out.round                              |     0.279 |
+|               gen_truncate.gen_round_out                 |     0.279 |
+|             gen_y_out.round                              |     0.218 |
+|               gen_truncate.gen_round_out                 |     0.218 |
++----------------------------------------------------------+-----------+
+
+
