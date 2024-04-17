@@ -1,4 +1,3 @@
--- Archivo: barrel_shifter_tb.vhd
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -6,13 +5,17 @@ use ieee.numeric_std.all;
 entity barrel_shifter_tb is
 end entity barrel_shifter_tb;
 
-architecture behavior of barrel_shifter_tb is
-    constant N     : integer := 8;  -- Número de bits de la entrada
-    signal a       : std_logic_vector(N-1 downto 0);  -- Entrada
-    signal s       : std_logic_vector(N-1 downto 0);  -- Salida
-    signal des     : integer range 0 to N-1;  -- Desplazamiento
+architecture tb_arch of barrel_shifter_tb is
+    -- Constant declaration for the input size
+    constant N : integer := 8;
+    
+    -- Signals for testbench
+    signal a    : std_logic_vector(N-1 downto 0);
+    signal s    : std_logic_vector(N-1 downto 0);
+    signal des  : integer range 0 to N-1;
 begin
-    uut: entity work.barrel_shifter
+    -- Instantiate the DUT
+    DUT : entity work.barrel_shifter
         generic map (
             N => N
         )
@@ -22,23 +25,20 @@ begin
             des => des
         );
 
-    -- Establecer los valores de prueba
-    a <= "01010101";
-    des <= 0;
-    wait for 10 ns;
+    -- Stimulus process
+    stim_process: process
+    begin
+        -- Apply stimulus
+        a <= "10101010"; -- Input data
+        des <= 0; -- No shift 
+        wait for 10 ns;
 
-    des <= 2;
-    wait for 10 ns;
+        des <= 2; -- Shift right by 2
+        wait for 10 ns;
 
-    des <= 5;
-    wait for 10 ns;
+        des <= 5; -- Shift left by 5
+        wait for 10 ns;
 
-    des <= 7;
-    wait for 10 ns;
-
-    des <= 3;
-    wait for 10 ns;
-
-    -- Fin de la simulación
-    wait;
-end architecture behavior;
+        wait;
+    end process;
+end architecture tb_arch;

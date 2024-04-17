@@ -1,49 +1,66 @@
--- Archivo: flipflop_tb.vhd
 library ieee;
 use ieee.std_logic_1164.all;
 
 entity flipflop_tb is
 end entity flipflop_tb;
 
-architecture behavior of flipflop_tb is
+architecture tb_arch of flipflop_tb is
+    -- Component declaration for the DUT (Design Under Test)
     component flipflop
         port (
             clk, rst, ena, d : in  std_logic;
             q                : out std_logic
         );
-    end component;
+    end component flipflop;
 
-    signal clk, rst, ena, d, q : std_logic;
-
+    -- Signals for testbench
+    signal clk, rst, ena, d, q : std_logic := '0';
 begin
-    uut: flipflop port map (clk, rst, ena, d, q);
+    -- Instantiate the DUT
+    DUT : flipflop
+        port map (
+            clk => clk,
+            rst => rst,
+            ena => ena,
+            d   => d,
+            q   => q
+        );
 
-    -- Establecer los valores de prueba
-    clk <= '0';
-    rst <= '0';
-    ena <= '0';
-    d   <= '0';
-    wait for 10 ns;
+    -- Clock generation process
+    clk_process: process
+    begin
+        while now < 1000 ns loop
+            clk <= '0';
+            wait for 5 ns;
+            clk <= '1';
+            wait for 5 ns;
+        end loop;
+        wait;
+    end process;
 
-    clk <= '1'; wait for 10 ns;
-    clk <= '0'; wait for 10 ns;
+    -- Stimulus process
+    stim_process: process
+    begin
+        -- Apply stimulus
+        rst <= '1'; -- Reset active high
+        ena <= '1'; -- Enable
+        d   <= '1'; -- Input data
+        wait for 20 ns;
 
-    clk <= '1'; wait for 10 ns;
-    d   <= '1'; wait for 10 ns;
-    clk <= '0'; wait for 10 ns;
+        rst <= '0'; -- De-assert reset
+        wait for 10 ns;
 
-    clk <= '1'; wait for 10 ns;
-    ena <= '1'; wait for 10 ns;
-    clk <= '0'; wait for 10 ns;
+        d <= '0'; -- Change input data
+        wait for 10 ns;
 
-    clk <= '1'; wait for 10 ns;
-    rst <= '1'; wait for 10 ns;
-    clk <= '0'; wait for 10 ns;
+        ena <= '0'; -- Disable
+        wait for 10 ns;
 
-    clk <= '1'; wait for 10 ns;
-    rst <= '0'; wait for 10 ns;
-    clk <= '0'; wait for 10 ns;
+        ena <= '1'; -- Re-enable
+        wait for 10 ns;
 
-    -- Fin de la simulación
-    wait;
-end architecture behavior;
+        -- Add more stimulus here as needed
+
+        wait;
+    end process;
+end architecture tb_arch;

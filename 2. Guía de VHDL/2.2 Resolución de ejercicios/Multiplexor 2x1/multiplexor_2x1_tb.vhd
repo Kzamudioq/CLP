@@ -1,4 +1,3 @@
--- Archivo: multiplexor_2x1_tb.vhd
 library ieee;
 use ieee.std_logic_1164.all;
 
@@ -6,6 +5,7 @@ entity multiplexor_2x1_tb is
 end entity multiplexor_2x1_tb;
 
 architecture behavior of multiplexor_2x1_tb is
+    -- Component declaration
     component multiplexor_2x1
         port (
             sel       : in  std_logic;
@@ -14,34 +14,35 @@ architecture behavior of multiplexor_2x1_tb is
         );
     end component;
 
-    signal sel       : std_logic;
-    signal data0, data1 : std_logic;
-    signal output    : std_logic;
+    -- Signals declaration
+    signal sel     : std_logic := '0';
+    signal data0   : std_logic := '0';
+    signal data1   : std_logic := '1';
+    signal output  : std_logic;
 
 begin
-    uut: multiplexor_2x1 port map (sel, data0, data1, output);
+    -- Instantiate the multiplexor
+    uut_multiplexor : multiplexor_2x1
+        port map (
+            sel => sel,
+            data0 => data0,
+            data1 => data1,
+            output => output
+        );
 
-    -- Establecer los valores de prueba
-    sel    <= '0';
-    data0  <= '0';
-    data1  <= '1';
-    wait for 10 ns;
+    -- Stimulus process
+    stimulus_process: process
+    begin
+        -- Change selection signal after 10 ns
+        wait for 10 ns;
+        sel <= '1';
+        wait for 10 ns;
+        sel <= '0';
+        wait for 10 ns;
+        data0 <= '1';
+        wait for 10 ns;
+        data1 <= '0';
+        wait;
+    end process stimulus_process;
 
-    sel    <= '1';
-    data0  <= '0';
-    data1  <= '1';
-    wait for 10 ns;
-
-    sel    <= '0';
-    data0  <= '1';
-    data1  <= '0';
-    wait for 10 ns;
-
-    sel    <= '1';
-    data0  <= '1';
-    data1  <= '0';
-    wait for 10 ns;
-
-    -- Fin de la simulación
-    wait;
 end architecture behavior;

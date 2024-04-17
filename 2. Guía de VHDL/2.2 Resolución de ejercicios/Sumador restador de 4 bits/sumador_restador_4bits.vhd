@@ -1,48 +1,78 @@
--- Archivo: sumador_restador_4bits.vhd
-library ieee;
-use ieee.std_logic_1164.all;
+library IEEE;
+use IEEE.std_logic_1164.all;
 
 entity sumador_restador_4bits is
     port (
-        sr_ctrl   : in  std_logic; -- Señal de control: '0' para suma, '1' para resta
-        a, b      : in  std_logic_vector(3 downto 0);
-        s         : out std_logic_vector(3 downto 0);
-        co        : out std_logic
+        a_i   : in  std_logic_vector(3 downto 0);  -- 4-bit A input
+        b_i   : in  std_logic_vector(3 downto 0);  -- 4-bit B input
+        ci_i  : in  std_logic;                     -- Carry In for the 1st bit
+        op_i  : in  std_logic;                     -- Operation control (0: add, 1: subtract)
+        s_o   : out std_logic_vector(3 downto 0);  -- 4-bit Sum Out
+        co_o  : out std_logic                      -- Carry Out
     );
-end entity sumador_restador_4bits;
+end sumador_restador_4bits;
 
 architecture behavior of sumador_restador_4bits is
+    -- Internal signals
+    signal aux   : std_logic_vector(4 downto 0);
+    signal tmp_b_i : std_logic_vector(3 downto 0);
 
-    component sumador_1bit
+    -- Component instantiation
+    component sumador_1bit is
         port (
-            ci, a, b : in  std_logic;
-            s, co    : out std_logic
+            a_i   : in  std_logic;   -- A input
+            b_i   : in  std_logic;   -- B input
+            ci_i  : in  std_logic;   -- Carry In
+            s_o   : out std_logic;   -- Sum Out (A + B + CI)
+            co_o  : out std_logic    -- Carry Out
         );
     end component;
 
-    signal co_temp : std_logic_vector(3 downto 0);
-    signal s_temp  : std_logic_vector(3 downto 0);
-
 begin
+    tmp_b_i(0) <= b_i(0) xor op_i;
+    tmp_b_i(1) <= b_i(1) xor op_i;
+    tmp_b_i(2) <= b_i(2) xor op_i;
+    tmp_b_i(3) <= b_i(3) xor op_i;
 
-    -- Conexiones de los sumadores de 1 bit
-    process(sr_ctrl)
-    begin
-        if sr_ctrl = '0' then -- Suma
-            sumador_0: sumador_1bit port map ('0', a(0), b(0), s_temp(0), co_temp(0));
-            sumador_1: sumador_1bit port map (co_temp(0), a(1), b(1), s_temp(1), co_temp(1));
-            sumador_2: sumador_1bit port map (co_temp(1), a(2), b(2), s_temp(2), co_temp(2));
-            sumador_3: sumador_1bit port map (co_temp(2), a(3), b(3), s_temp(3), co_temp(3));
-        elsif sr_ctrl = '1' then -- Resta (mediante complemento a 2)
-            sumador_0: sumador_1bit port map ('1', a(0), not b(0), s_temp(0), co_temp(0));
-            sumador_1: sumador_1bit port map (co_temp(0), a(1), not b(1), s_temp(1), co_temp(1));
-            sumador_2: sumador_1bit port map (co_temp(1), a(2), not b(2), s_temp(2), co_temp(2));
-            sumador_3: sumador_1bit port map (co_temp(2), a(3), not b(3), s_temp(3), co_temp(3));
-        end if;
-    end process;
+    aux(0) <= op_i;
 
-    -- Salidas del sumador
-    s <= s_temp;
-    co <= co_temp(3);
+    -- Descriptive section
+    sum0: sumador_1bit
+    port map (
+        a_i  => a_i(0),
+        b_i  => tmp_b_i(0),
+        ci_i => ci_i,
+        s_o  => s_o(0),
+        co_o => aux(1)
+    );
+
+    sum1: sumador_1bit
+    port map (
+        a_i  => a_i(1),
+        b_i  => tmp_b_i(1),
+        ci_i => aux(1),
+        s_o  => s_o(1),
+        co_o => aux(2)
+    );
+
+    sum2: sumador_1bit
+    port map (
+        a_i  => a_i(2),
+        b_i  => tmp_b_i(2),
+        ci_i => aux(2),
+        s_o  => s_o(2),
+        co_o => aux(3)
+    );
+
+    sum3: sumador_1bit
+    port map (
+        a_i  => a_i(3),
+        b_i  => tmp_b_i(3),
+        ci_i => aux(3),
+        s_o  => s_o(3),
+        co_o => aux(4)
+    );
+
+    co_o <= aux(4) xor op_i;
 
 end architecture behavior;

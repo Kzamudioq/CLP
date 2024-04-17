@@ -20,10 +20,37 @@ architecture behavior of registro_desplazamiento is
 
     signal q1, q2, q3, q4 : std_logic;
 begin
-    FF1: flipflop port map (clk, rst, e, d(0), q1);
-    FF2: flipflop port map (clk, rst, e, d(1), q2);
-    FF3: flipflop port map (clk, rst, e, d(2), q3);
-    FF4: flipflop port map (clk, rst, e, d(3), q4);
+    FF1: flipflop port map (
+        clk => clk,
+        rst => rst,
+        ena => e,
+        d   => d(0),
+        q   => q1
+    );
+
+    FF2: flipflop port map (
+        clk => clk,
+        rst => rst,
+        ena => e,
+        d   => d(1),
+        q   => q2
+    );
+
+    FF3: flipflop port map (
+        clk => clk,
+        rst => rst,
+        ena => e,
+        d   => d(2),
+        q   => q3
+    );
+
+    FF4: flipflop port map (
+        clk => clk,
+        rst => rst,
+        ena => e,
+        d   => d(3),
+        q   => q4
+    );
 
     s(0) <= q1;
     s(1) <= q2;

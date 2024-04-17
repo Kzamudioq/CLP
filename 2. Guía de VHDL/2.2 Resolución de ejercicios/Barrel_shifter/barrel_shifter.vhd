@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 
 entity barrel_shifter is
     generic (
-        N : integer := 8  -- Número de bits de la entrada
+        N : integer := 8  -- N�mero de bits de la entrada
     );
     port (
         a    : in  std_logic_vector(N-1 downto 0);  -- Entrada
@@ -22,7 +22,7 @@ begin
             if i-des >= 0 and i-des < N then
                 s(i) <= a(i-des);
             else
-                s(i) <= '0'; -- Rellena con ceros si el desplazamiento es mayor que el tamaño de la entrada
+                s(i) <= '0'; 
             end if;
         end loop;
     end process;
