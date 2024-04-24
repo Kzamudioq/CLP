@@ -26,6 +26,7 @@
 \usepackage{textcomp}
 \usepackage{capt-of}
 \usepackage[spanish]{babel}
+
 \usepackage{listings}
 \let\bibhang\relax  % Elimina la definición previa de \bibhang
 \usepackage[numbers]{natbib}
@@ -60,7 +61,7 @@
     \begin{center}
         \vspace*{1cm}
 
-                \includegraphics[width=0.8\textwidth]{Figuras/logoFIUBA.pdf} % Ruta al logo de FIUBA
+                \includegraphics[width=1\textwidth]{Figuras/logoFIUBA.pdf} % Ruta al logo de FIUBA
 
         \vspace{1.5cm}
 
@@ -148,7 +149,7 @@ El alcance de este documento abarca la descripción detallada del diseño e impl
  Se realizarán simulaciones del módulo en un entorno adecuado para evaluar su comportamiento en diversos escenarios, y se analizarán los resultados obtenidos. Asimismo, se llevará a cabo un análisis del uso de recursos de la FPGA por parte del diseño, con el objetivo de evaluar su eficiencia y escalabilidad en sistemas digitales.
 
 
-\section{¿Qué es CORDIC?}
+\section{CORDIC}
 \label{sec:orgc1c4017}
 
 CORDIC (Coordinate Rotation Digital Computer) es un algoritmo utilizado para calcular funciones trigonométricas, como seno, coseno, arcotangente, y para realizar rotaciones y transformaciones de coordenadas de manera eficiente en sistemas digitales. Fue desarrollado en la década de 1950 por Jack E. Volder en Bell Labs.
@@ -163,18 +164,27 @@ El algoritmo CORDIC es especialmente útil en aplicaciones donde se requieren c�
 \label{sec:orgdaca22c}
 
 
-El algoritmo CORDIC (Coordinate Rotation Digital Computer) Trigonométrico es un método iterativo utilizado para calcular funciones trigonométricas como seno ($\sin$), coseno ($\cos$), arcoseno ($\arcsin$) y arcocoseno ($\arccos$). Funciona mediante iteraciones de rotación y desplazamiento, donde cada iteración aproxima gradualmente el valor deseado de la función trigonométrica. El algoritmo se basa en la representación de un ángulo en coordenadas cartesianas $(X, Y)$ y utiliza rotaciones sucesivas para acercarse al ángulo objetivo. A medida que las iteraciones continúan, el valor de salida converge hacia el valor correcto con una precisión determinada.
+El algoritmo CORDIC (Coordinate Rotation Digital Computer) Trigonométrico es un método iterativo utilizado para calcular funciones trigonométricas como el seno ($\sin$), coseno ($\cos$), arcoseno ($\arcsin$) y arcocoseno ($\arccos$). Funciona mediante iteraciones de rotación y desplazamiento, donde cada iteración aproxima gradualmente el valor deseado de la función trigonométrica. El algoritmo se basa en la representación de un ángulo en coordenadas cartesianas $(X, Y)$ y utiliza rotaciones sucesivas para acercarse al ángulo objetivo. A medida que las iteraciones continúan, el valor de salida converge hacia el valor correcto con una precisión determinada.
 
-Descripción de las iteraciones de rotación y desplazamiento utilizadas en el alg
 En cada iteración del algoritmo CORDIC Trigonométrico, se realiza una rotación y un desplazamiento de las coordenadas $(X, Y)$. La rotación se realiza mediante el ajuste de los ángulos de las coordenadas, lo que permite acercarse al ángulo objetivo. El desplazamiento se utiliza para ajustar las magnitudes de las coordenadas y garantizar que la convergencia del algoritmo sea adecuada. Estas iteraciones se repiten hasta que se alcanza la precisión deseada en el cálculo de la función trigonométrica.
 
 Por ejemplo, para calcular el seno de un ángulo dado utilizando el algoritmo CORDIC Trigonométrico, se inicializan las coordenadas $(X, Y)$ con valores apropiados y se realizan iteraciones de rotación y desplazamiento hasta que se alcanza la precisión deseada. El valor de $Y$ al final de las iteraciones representa el valor aproximado del seno del ángulo dado. De manera similar, se pueden calcular el coseno, el arcoseno y el arcocoseno utilizando adaptaciones del algoritmo CORDIC Trigonométrico.
 
-
 La precisión y la convergencia del algoritmo CORDIC Trigonométrico dependen del número de iteraciones realizadas y del número de bits utilizados para representar los valores de las coordenadas. En general, el algoritmo converge rápidamente y proporciona resultados precisos con un número suficiente de iteraciones. Sin embargo, la precisión puede verse afectada por la representación finita de los números en sistemas digitales y por la resolución de las operaciones de rotación y desplazamiento.
 
+El algoritmo CORDIC trigonométrico se utiliza en una amplia gama de aplicaciones en sistemas digitales, incluyendo procesamiento de señales, comunicaciones, gráficos por computadora, sistemas de navegación y más. Se utiliza para calcular funciones trigonométricas de manera eficiente y precisa en sistemas donde se requieren cálculos frecuentes de ángulos y funciones trigonométricas. Su implementación en hardware digital es especialmente adecuada debido a su simplicidad y eficiencia en términos de recursos computacionales.
 
-El algoritmo CORDIC trigonométrico se utiliza en una amplia gama de aplicaciones en sistemas digitales, incluyendo procesamiento de señales, comunicaciones, gráficos por computadora, sistemas de navegación, y más. Se utiliza para calcular funciones trigonométricas de manera eficiente y precisa en sistemas donde se requieren cálculos frecuentes de ángulos y funciones trigonométricas. Su implementación en hardware digital es especialmente adecuada debido a su simplicidad y eficiencia en términos de recursos computacionales.
+Las ecuaciones para las iteraciones de rotación y desplazamiento en el algoritmo CORDIC Trigonométrico pueden ser expresadas como:
+
+\begin{equation}
+    \begin{aligned}
+        X_{i+1} &= X_i - \delta_i \cdot Y_i \cdot 2^{-i}, \\
+        Y_{i+1} &= Y_i + \delta_i \cdot X_i \cdot 2^{-i}, \\
+        Z_{i+1} &= Z_i - \delta_i \cdot \text{atanh}(2^{-i}),
+    \end{aligned}
+\end{equation}
+
+donde $i$ es el índice de iteración, $\delta_i$ es el signo de la rotación en la iteración $i$, $X_i$, $Y_i$ son las coordenadas en la iteración $i$, y $Z_i$ es el ángulo acumulado hasta la iteración $i$.  
 
 
 
@@ -197,6 +207,7 @@ El algoritmo CORDIC logarítmico utiliza una serie de iteraciones para aproximar
 Una de las características clave del CORDIC logarítmico es su capacidad para calcular estas funciones de manera eficiente y precisa utilizando un enfoque iterativo y estructuras de datos simples. Esto lo hace adecuado para su implementación en sistemas digitales donde se requieren cálculos de funciones no trigonométricas con recursos limitados.
 
 El CORDIC logarítmico tiene una amplia gama de aplicaciones en sistemas digitales, incluyendo procesamiento de señales, compresión de datos, criptografía y más. Se utiliza en situaciones donde se requiere el cálculo rápido y preciso de funciones logarítmicas y exponenciales, así como operaciones relacionadas como la raíz cuadrada y el exponente. Su eficiencia y precisión lo hacen valioso en una variedad de aplicaciones de sistemas digitales.
+
 
 
 
@@ -387,8 +398,117 @@ Finalmente, se asignan las salidas \texttt{Xout} y \texttt{Yout} del módulo con
 
 
 
-\subsubsection{Identificación de los estados del sistema}
+\subsection{Simulación}
 \label{sec:orgdaca22c}
+
+
+En este documento, se describe el proceso para realizar la simulación del diseño en Vivado y posteriormente generar el archivo .bit que se utilizará para la programación de la FPGA.
+
+\subsection{Simulación en vivado}
+
+Para realizar la simulación en Vivado, sigue estos pasos:
+
+\begin{enumerate}
+    \item \textbf{Crear un proyecto:} Abre Vivado y crea un nuevo proyecto. Selecciona la opción de crear un diseño de tipo "RTL Project" e importa los archivos fuente de tu diseño, incluyendo el código Verilog o VHDL del rotador CORDIC.
+
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth,natwidth=10,natheight=14]{./Figuras/New_project.png}
+    \caption{Crear nuevo proyecto en Vivado}
+    \label{fig:esquema}
+    \end{figure}   
+    
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth,natwidth=610,natheight=642]{./Figuras/add_source.png}
+    \caption{IMportacion de archivos fuente}
+    \label{fig:esquema}
+    \end{figure} 
+    
+   
+    
+    \item \textbf{Configurar simulación:} una vez que hayas creado el proyecto. Ve a la pestaña "Flow Navigator" y selecciona "Simulation". Aquí puedes configurar las opciones de simulación, como el tipo de simulador a utilizar y los archivos de simulación a incluir.
+    
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{./Figuras/Run_simulacion_visual.png}
+    \caption{Esquema utilizado para la simulación en Vivado}
+    \label{fig:esquema}
+    \end{figure}
+    
+    
+    \item \textbf{Ejecutar la simulación:} después de configurar la simulación, ejecútala haciendo clic en el botón "Run Simulation". Vivado ejecutará la simulación y generará resultados que podrás analizar.
+    
+
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth,natwidth=610,natheight=642]{./Figuras/Resultado.png}
+    \caption{Esquema utilizado para implementación de Cordic}
+    \label{fig:esquema}
+    \end{figure}
+    
+\subsection{Esquema}
+
+El esquema utilizado para conectar las entradas y salidas del rotador CORDIC durante la simulación en Vivado se muestra en la Figura \ref{fig:esquema}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth,natwidth=610,natheight=642]{./Figuras/Run_simulacion_visual.png}
+    \caption{Esquema utilizado para la simulación en Vivado}
+    \label{fig:esquema}
+\end{figure}
+    
+    \item \textbf{Análisis de Resultados:} Una vez completada la simulación, analiza los resultados en Vivado. Puedes revisar las formas de onda de las señales de entrada y salida, así como cualquier mensaje de advertencia o error que pueda haberse generado durante la simulación.
+\end{enumerate}
+
+
+
+
+
+
+
+Con estos pasos, habrás completado tanto la simulación del diseño en Vivado como la generación del archivo .bit para programar la FPGA.
+
+
+
+\subsection{Generación del Archivo .bit}
+
+Una vez que hayas completado y verificado la simulación en Vivado, puedes proceder a generar el archivo .bit para programar la FPGA. Sigue estos pasos:
+
+\begin{enumerate}
+    \item \textbf{Implementación del Diseño:} En Vivado, ve a la pestaña "Flow Navigator" y selecciona "Implementation". Aquí, ejecuta el proceso de implementación para sintetizar y asignar el diseño a los recursos de la FPGA.
+    
+    \item \textbf{Generación del Bitstream:} Después de completar la implementación, ve a la pestaña "Generate Bitstream" en Vivado. Ejecuta este proceso para generar el archivo .bit, que contiene la configuración del diseño para la FPGA.
+    
+    \item \textbf{Programación de la FPGA:} Una vez generado el archivo .bit, puedes utilizarlo para programar la FPGA. Conecta la FPGA a tu computadora y utiliza el software de programación de Vivado para cargar el archivo .bit en la FPGA.
+\end{enumerate}
+
+Con estos pasos, habrás completado tanto la simulación del diseño en Vivado como la generación del archivo .bit para programar la FPGA.
+
+\textbf{Nota:} El trabajo desarrollado se realizó sobre una FPGA de la firma Xilinx. La placa de desarrollo utilizada es la Arty Z7-10 de la empresa Digilent.
+
+\end{document}
+
+
+
+
+\subsection{Generación del Archivo .bit}
+
+Una vez que hayas completado y verificado la simulación en Vivado, puedes proceder a generar el archivo .bit para programar la FPGA. Sigue estos pasos:
+
+\begin{enumerate}
+    \item \textbf{Implementación del Diseño:} En Vivado, ve a la pestaña "Flow Navigator" y selecciona "Implementation". Aquí, ejecuta el proceso de implementación para sintetizar y asignar el diseño a los recursos de la FPGA.
+    
+    \item \textbf{Generación del Bitstream:} Después de completar la implementación, ve a la pestaña "Generate Bitstream" en Vivado. Ejecuta este proceso para generar el archivo .bit, que contiene la configuración del diseño para la FPGA.
+    
+    \item \textbf{Programación de la FPGA:} Una vez generado el archivo .bit, puedes utilizarlo para programar la FPGA. Conecta la FPGA a tu computadora y utiliza el software de programación de Vivado para cargar el archivo .bit en la FPGA.
+\end{enumerate}
+
+Con estos pasos, habrás completado tanto la simulación del diseño en Vivado como la generación del archivo .bit para programar la FPGA.
+
+\textbf{Nota:} El trabajo desarrollado se realizó sobre una FPGA de la firma Xilinx. La placa de desarrollo utilizada es la Arty Z7-10 de la empresa Digilent.
+
+\end{document}
 
 El sistema Realità, al ser un sistema autónomo para la captura de información topográfica, presenta diversos estados durante su funcionamiento. Para una mejor comprensión del sistema, se detallan a continuación los estados principales:
 
