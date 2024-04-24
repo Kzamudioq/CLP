@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1713963893">
+  <File Type="PWROPT-DCP" Name="vio_cordic_pwropt.dcp"/>
+  <File Type="ROUTE-PWR" Name="vio_cordic_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="vio_cordic.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="vio_cordic_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="vio_cordic_reports.tcl"/>
+  <File Type="BG-DRC" Name="vio_cordic.drc"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="vio_cordic_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="vio_cordic_timing_summary_init.rpt"/>
+  <File Type="OPT-HWDEF" Name="vio_cordic.hwdef"/>
+  <File Type="OPT-DCP" Name="vio_cordic_opt.dcp"/>
+  <File Type="OPT-DRC" Name="vio_cordic_drc_opted.rpt"/>
+  <File Type="OPT-TIMING" Name="vio_cordic_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="vio_cordic_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="vio_cordic_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="vio_cordic_placed.dcp"/>
+  <File Type="PLACE-IO" Name="vio_cordic_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="vio_cordic_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="vio_cordic_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="vio_cordic_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="vio_cordic_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="vio_cordic_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="vio_cordic_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="vio_cordic_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="vio_cordic_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="vio_cordic_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="vio_cordic_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="vio_cordic_drc_physopted.rpt"/>
+  <File Type="BG-BIT" Name="vio_cordic.bit"/>
+  <File Type="PHYSOPT-TIMING" Name="vio_cordic_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="vio_cordic_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="vio_cordic_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="vio_cordic_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="vio_cordic_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="vio_cordic_drc_routed.pb"/>
+  <File Type="BITSTR-MSK" Name="vio_cordic.msk"/>
+  <File Type="ROUTE-DRC-RPX" Name="vio_cordic_drc_routed.rpx"/>
+  <File Type="BG-BGN" Name="vio_cordic.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="vio_cordic_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-RBT" Name="vio_cordic.rbt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="vio_cordic_methodology_drc_routed.rpx"/>
+  <File Type="BG-BIN" Name="vio_cordic.bin"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="vio_cordic_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="vio_cordic_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="vio_cordic_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="vio_cordic_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="vio_cordic_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="vio_cordic_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="vio_cordic_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="vio_cordic_incremental_reuse_routed.rpt"/>
+  <File Type="RDI-RDI" Name="vio_cordic.vdi"/>
+  <File Type="ROUTE-CLK" Name="vio_cordic_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="vio_cordic_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="vio_cordic_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="vio_cordic_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="vio_cordic_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="vio_cordic_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="vio_cordic.nky"/>
+  <File Type="BITSTR-BMM" Name="vio_cordic_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="vio_cordic.mmi"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="vio_cordic.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="vio_cordic.sysdef"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/MyVerilog/cordic_rotator.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/MyVerilog/vio_cordic.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/MyVerilog/cordic_rotator_tb.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="vio_cordic"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/MyVerilog/ArtyZ7_10.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="vio_cordic_rotator"/>
+</GenRun>

@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ktzam/Downloads/CIRCUITOS LOGICO/20042024/cordic_rotator/MyVerilog/cordic_rotator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cordic_rotator
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ktzam/Downloads/CIRCUITOS LOGICO/20042024/cordic_rotator/MyVerilog/cordic_rotator_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cordic_rotator_tb

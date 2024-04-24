@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Wed Apr 24 08:05:45 2024
+# Process ID: 33188
+# Current directory: C:/Users/ktzam/Downloads/CIRCUITOS LOGICO/20042024/cordic_rotator/cordic_rotator.runs/impl_1
+# Command line: vivado.exe -log vio_cordic.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source vio_cordic.tcl -notrace
+# Log file: C:/Users/ktzam/Downloads/CIRCUITOS LOGICO/20042024/cordic_rotator/cordic_rotator.runs/impl_1/vio_cordic.vdi
+# Journal file: C:/Users/ktzam/Downloads/CIRCUITOS LOGICO/20042024/cordic_rotator/cordic_rotator.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source vio_cordic.tcl -notrace

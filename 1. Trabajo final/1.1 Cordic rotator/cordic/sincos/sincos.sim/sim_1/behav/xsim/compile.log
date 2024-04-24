@@ -1,6 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ktzam/Downloads/sincos/MyHDL/sincos.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module sincos
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ktzam/Downloads/sincos/MyHDL/sincos_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module sincos_tb
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/ktzam/Downloads/sincos/sincos.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
