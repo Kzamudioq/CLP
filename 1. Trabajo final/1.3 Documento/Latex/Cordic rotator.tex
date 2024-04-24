@@ -26,6 +26,7 @@
 \usepackage{textcomp}
 \usepackage{capt-of}
 \usepackage[spanish]{babel}
+\usepackage{listings}
 \let\bibhang\relax  % Elimina la definición previa de \bibhang
 \usepackage[numbers]{natbib}
 \usepackage{hyperref}
@@ -37,7 +38,7 @@
 \renewcommand{\headrulewidth}{1.0pt}
 \pagestyle{fancy}
 \date{}
-\title{Testing de software en sistemas embebidos}
+\title{Circuitos lógicos programables}
 \hypersetup{
     pdfauthor={},
     pdftitle={Testing de software en sistemas embebidos},
@@ -46,6 +47,8 @@
     pdfcreator={Emacs 26.2 (Org mode 9.1.9)},
     pdflang={ spanish }
 }
+
+\linespread{1.5}
 
 \begin{document}
 
@@ -61,10 +64,10 @@
 
         \vspace{1.5cm}
 
-        \textbf{\LARGE Realità : prototipo de sistema autónomo para captura de información topográfica}
+        \textbf{\LARGE CORDIC modo rotador}
 
         \vspace{4cm}
-        \textbf{\Large Testing de software en sistemas embebidos}
+        \textbf{\Large Circuitos lógicos programables}
 
         \vspace{1.5cm}
 
@@ -75,16 +78,14 @@
         \vspace{0.8cm}
 
         \textbf{\Large Revisión A}\\
-        \large Esteban Volentini
-
-        \large Mariano Finochietto
+        \large Nicolas Álvarez
 
         \vfill
 
         \textbf{\Large Universidad de Buenos Aires}\\
         \vspace{0.2cm}
 
-        \large 11 abril 2024
+        \large  11 abril 2024
 
     \end{center}
 \end{titlepage}
@@ -103,7 +104,7 @@
     \hline
     0 & Creación del documento & \ 11 de abril 2024 \\
     \hline
-    1 & Entrega A & \ 17 de abril 2024 \\
+    1 & Entrega  & \ 23 de abril 2024 \\
     \hline
   \end{tabularx}
 \end{table}
@@ -116,127 +117,284 @@
 \section{Introducción}
 \label{sec:org60390fa}
 
-El desarrollo del trabajo Realità representa un esfuerzo colaborativo destinado a crear un sistema autónomo para la captura de información topográfica, abordando la creciente demanda de eficiencia en la obtención de datos topográficos. Como parte integral de este proceso, se presenta el Master Test Plan (MTP), una herramienta fundamental para asegurar la calidad y confiabilidad del software que respalda este innovador sistema.
+En el contexto del diseño digital y la implementación de algoritmos, el presente documento aborda la creación y análisis de un módulo de rotación basado en el algoritmo CORDIC (Coordinate Rotation Digital Computer). El algoritmo CORDIC es ampliamente utilizado en sistemas digitales para calcular funciones trigonométricas y transformaciones de coordenadas de manera eficiente.
+
+Este documento proporcionará una visión general del diseño del módulo cordic rotator, destacando su funcionamiento, estructura interna y su implementación en una FPGA (Field-Programmable Gate Array). Además, se presentarán los resultados de simulaciones y se analizará el uso de recursos de la FPGA.
 
 
-\begin{figure}[htpb]
-\centering
-\includegraphics[width=1\textwidth]{./Figuras/Prototipo.png}
-\caption{Prototipo para captura de información de nube de puntos.}
-\label{fig:diagBloques}
-\end{figure}
-
-\newpage
-
-
-\subsection{Propósito}
-\label{sec:org434c3ef}
-
-El objetivo principal del trabajo es abordar los desafíos relacionados con la obtención de datos topográficos precisos, por lo anterior, está dirigido a profesionales y organizaciones involucradas en proyectos que requieren información geoespacial precisa, como ingenieros, arquitectos, empresas de construcción y gestión de recursos naturales.
-
-El prototipo se basa en la integración de múltiples sensores, que incluyen sensores GPS (Sistemas de Navegación por Satélite), sensores LIDAR (Detección y Teledetección por Luz y Alcance), un sensor de imagen con profundidad y una IMU (Unidad de Medición Inercial) en su versión inicial, los anteriores componentes trabajan en conjunto para capturar una amplia gama de datos topográficos (fusión de datos  para nube de puntos 3D), desde coordenadas geoespaciales iniciales hasta detalles visuales y altimétricos, con el potencial de escalabilidad a sensores de mayor precisión en futuras etapas del trabajo. La fusión de datos para nube de puntos 3D es una etapa clave en el proceso del sistema autónomo para captura de información topográfica. Comienza con la recopilación de datos de múltiples sensores, incluyendo GPS, LIDAR, sensor de imagen e IMU, que capturan información topográfica. Estos datos se envían al MicroControlador (MC), donde se combinan y procesan inteligentemente para generar una nube de puntos 3D con coordenada que representa el entorno topográfico, este proceso se   evidencia en la figura 2.
-
-\begin{figure}[htpb]
-\centering
-\includegraphics[width=0.95\textwidth]{./Figuras/Fusión_de_Datos_para_Nube_de_Puntos_3D.pdf}
-\caption{Diagrama de secuencia}
-\label{fig:diagBloques}
-\end{figure}
-
-
-
-
-\subsection{Ámbito del sistema}
-\label{sec:org12e44a1}
-
-
-\subsubsection{Nombre del sistema}
+\subsection{Objetivos}
 \label{subsec:org12e44a2}
 
-Se introduce con entusiasmo al innovador trabajo "Realità", un sistema autónomo diseñado para la captura de información topográfica de manera eficiente y precisa, la elección del nombre "Realità" refleja su capacidad única para capturar la realidad del entorno con una precisión excepcional. Adicionalmente, el nombre no solo simboliza la fusión de datos provenientes de múltiples sensores, como GPS, LIDAR, sensor de imagen e IMU, para crear una representación tridimensional detallada, sino que también encarna la visión de transformar sueños en una realidad tangible para quien construye este trabajo.
-
-
-En un contexto donde la precisión de la información topográfica es esencial para profesionales y organizaciones en diversas áreas, "Realità" se rige como un sueño convertido en realidad, ofreciendo un enfoque revolucionario que supera los desafíos actuales y promete redefinir la manera en que se aborda la captura de datos geoespaciales.
-
-
-\subsubsection{Objetivos}
-\label{subsec:org12e44a2}
-
-
-\begin{itemize}
-
-\item Desarrollar un prototipo funcional del sistema autónomo para la captura de información topográfica, destacando la integración de sensores multimodales como piedra angular.
-
-\item Demostrar la viabilidad y eficacia de esta tecnología innovadora al generar mapas precisos del entorno que sean comparables a los mapas generados por métodos tradicionales, lo que e reduce en nuevas oportunidades para la aplicación de la tecnología en una variedad de campos, como la construcción, la planificación urbana y la gestión de recursos naturales.
-
-\item Implementar un algoritmo de fusión de datos de última generación para integrar datos de sensores GPS, LIDAR, sensor de imagen e IMU, lo anterior proporcionará una representación detallada y precisa del terreno, permitiendo a los usuarios obtener una comprensión más completa del entorno y, por ende, tomar decisiones más informadas.
-
-\item Culminar exitosamente el desarrollo del prototipo, estableciendo así las bases para futuras mejoras y desarrollos en la captura de datos topográficos, esta plataforma experimental permitirá a los investigadores explorar nuevas tecnologías que mejoren la precisión, eficiencia y utilidad de la captura de datos topográficos.
-\end{itemize}
-
-
-
-
-
-\subsubsection{Alcance}
-\label{subsec:org12e44a2}
-
-
-Este trabajo tiene como alcance principal el desarrollo de un prototipo funcional para un sistema autónomo diseñado específicamente para la captura de información topográfica, la esencia del enfoque radicará en la integración de sensores multimodales, como GPS, LIDAR, sensor de imagen e IMU, con el propósito de demostrar la viabilidad y eficacia en la generación de mapas precisos del entorno, ademas la implementación de un algoritmo de fusión de datos de última generación será crucial para proporcionar una representación detallada y precisa del terreno. Todo lo anterior, llevará a cabo una evaluación exhaustiva en campos como la construcción, planificación urbana y gestión de recursos naturales.
-
-Sin embargo, es esencial señalar que este trabajo no contemplará la implementación de sensores de mayor precisión en futuras etapas, ni explorará la integración de tecnologías aún no desarrolladas. Además, no se abordarán aspectos relacionados con la seguridad cibernética de los datos recopilados, quedando este tema claramente fuera del alcance del presente trabajo. Estas limitaciones se establecen con el propósito de proporcionar claridad con respecto a las fronteras del trabajo y dirigir futuras investigaciones hacia objetivos específicos.
-
-
-\section{State transition testing}
-\label{sec:orgc1c4017}
-
-\subsection{Definición de State Transition Testing}
-\label{sec:orgdaca22c}
-
-
-
-El State Transition Testing (Pruebas de Transición de Estados) es una técnica de diseño de pruebas utilizada para evaluar el comportamiento de un sistema basado en estados. Este enfoque se centra en verificar si las transiciones entre diferentes estados del sistema se realizan correctamente de acuerdo con las especificaciones establecidas. En términos simples, un sistema basado en estados puede estar en uno de varios estados en un momento dado, y las transiciones ocurren cuando el sistema cambia de un estado a otro en respuesta a eventos específicos. Por ejemplo, en un sistema de reserva de vuelos, los estados podrían incluir disponible, reservado y cancelado, y las transiciones podrían ser reservar vuelo o cancelar reserva.
-
-
-La técnica de State Transition Testing se utiliza para identificar y probar todas las posibles transiciones entre estados, así como para verificar la lógica asociada con esas transiciones. Esto garantiza que el sistema se comporte correctamente en diferentes situaciones y que los usuarios obtengan resultados esperados en todas las interacciones.
-
-\subsection{Importancia del State Transition Testing en Realità}
-\label{sec:orgdaca22c}
-
-El State Transition Testing (STT) es una técnica de prueba de software que se puede aplicar para verificar el correcto funcionamiento del sistema Realità. El STT se basa en la definición de un modelo de estado del sistema, que describe los diferentes estados en los que puede encontrarse el sistema y las transiciones entre esos estados. Cada transición se desencadena por un evento específico y tiene como resultado un nuevo estado del sistema, para aplicar el STT al sistema Realità, se deben seguir los siguientes pasos:
+Analizar y documentar el diseño, implementación y funcionamiento del módulo cordic rotator basado en el algoritmo CORDIC, así como evaluar su eficiencia y aplicabilidad en sistemas digitales.
 
 \begin{enumerate}
-\item Definir el modelo de estado del sistema implica identificar los diferentes estados en los que puede encontrarse el sistema, así como los eventos que desencadenan las transiciones entre esos estados.
 
-\item Diseñar casos de prueba para cada transición, cada caso de prueba debe verificar que la transición se comporta correctamente, es decir, que el sistema pasa al estado correcto después de que se produce el evento.
+\item Describir el algoritmo CORDIC y su aplicación en rotación de coordenadas: proporcionar una explicación detallada del algoritmo CORDIC y cómo se utiliza para realizar rotaciones de coordenadas cartesianas en el diseño del módulo cordic rotator.
 
-\item Ejecutar los casos de prueba y analizar los resultados. Si un caso de prueba falla, indica que hay un error en el sistema que debe corregirse.
+\item Implementar el módulo cordic rotator en Verilog: crear una implementación en Verilog del módulo cordic rotator, asegurando que el código refleje correctamente la lógica del algoritmo CORDIC y que sea adecuado para su uso en sistemas digitales.
 
+\item Realizar simulaciones del módulo y analizar su comportamiento: ejecutar simulaciones del módulo cordic rotator en un entorno de simulación, utilizando diferentes casos de prueba para evaluar su funcionamiento en una variedad de escenarios. Analizar los resultados de las simulaciones para verificar la precisión y eficacia del diseño.
+
+\item Evaluar el uso de recursos de la FPGA: realizar un análisis exhaustivo del uso de recursos de la FPGA por parte del diseño del módulo cordic rotator, incluyendo el número de LUTs, FFs y otros recursos utilizados. Identificar áreas de mejora en términos de eficiencia y optimización del diseño.
 
 \end{enumerate}
 
 
+\subsection{Alcance}
+\label{subsec:org12e44a2}
 
-El STT puede ser una herramienta valiosa para garantizar el correcto funcionamiento del sistema Realità. Al verificar que el sistema se comporta como se espera en todos los estados posibles, se puede reducir el riesgo de errores y garantizar que el sistema pueda capturar información topográfica de manera precisa y eficiente.
+El alcance de este documento abarca la descripción detallada del diseño e implementación del módulo cordic rotator utilizando el algoritmo CORDIC en Verilog. Se incluirá una explicación exhaustiva del funcionamiento del algoritmo CORDIC y su aplicación en la rotación de coordenadas cartesianas. Además, se proporcionará el código Verilog del módulo cordic rotator junto con explicaciones detalladas de su estructura interna y su funcionamiento.
+
+ Se realizarán simulaciones del módulo en un entorno adecuado para evaluar su comportamiento en diversos escenarios, y se analizarán los resultados obtenidos. Asimismo, se llevará a cabo un análisis del uso de recursos de la FPGA por parte del diseño, con el objetivo de evaluar su eficiencia y escalabilidad en sistemas digitales.
 
 
-\section{Aplicación del State Transition Testing en Realità}
+\section{¿Qué es CORDIC?}
 \label{sec:orgc1c4017}
 
+CORDIC (Coordinate Rotation Digital Computer) es un algoritmo utilizado para calcular funciones trigonométricas, como seno, coseno, arcotangente, y para realizar rotaciones y transformaciones de coordenadas de manera eficiente en sistemas digitales. Fue desarrollado en la década de 1950 por Jack E. Volder en Bell Labs.
+
+El algoritmo CORDIC se basa en una serie de rotaciones y desplazamientos sucesivos que permiten aproximar funciones trigonométricas y realizar operaciones de rotación con un bajo costo computacional. Una de las características clave del algoritmo CORDIC es su capacidad para realizar estas operaciones utilizando únicamente operaciones de suma, resta y desplazamiento bit a bit, lo que lo hace adecuado para implementaciones en hardware digital.
+
+El algoritmo CORDIC es especialmente útil en aplicaciones donde se requieren cálculos trigonométricos rápidos y precisos, como en sistemas de procesamiento de señales, sistemas de comunicación digital, gráficos por computadora, entre otros. Además, es altamente versátil y puede adaptarse para calcular una amplia gama de funciones trigonométricas y realizar diversas operaciones geométricas.
 
 
-El State Transition Testing (Pruebas de Transición de Estados) es una técnica de diseño de pruebas utilizada para evaluar el comportamiento de un sistema basado en estados. En este caso, aplicaremos esta técnica a Realità para garantizar su correcto funcionamiento y conformidad con las especificaciones establecidas.
+
+\subsection{CORDIC trigonométrico}
+\label{sec:orgdaca22c}
+
+
+El algoritmo CORDIC (Coordinate Rotation Digital Computer) Trigonométrico es un método iterativo utilizado para calcular funciones trigonométricas como seno ($\sin$), coseno ($\cos$), arcoseno ($\arcsin$) y arcocoseno ($\arccos$). Funciona mediante iteraciones de rotación y desplazamiento, donde cada iteración aproxima gradualmente el valor deseado de la función trigonométrica. El algoritmo se basa en la representación de un ángulo en coordenadas cartesianas $(X, Y)$ y utiliza rotaciones sucesivas para acercarse al ángulo objetivo. A medida que las iteraciones continúan, el valor de salida converge hacia el valor correcto con una precisión determinada.
+
+Descripción de las iteraciones de rotación y desplazamiento utilizadas en el alg
+En cada iteración del algoritmo CORDIC Trigonométrico, se realiza una rotación y un desplazamiento de las coordenadas $(X, Y)$. La rotación se realiza mediante el ajuste de los ángulos de las coordenadas, lo que permite acercarse al ángulo objetivo. El desplazamiento se utiliza para ajustar las magnitudes de las coordenadas y garantizar que la convergencia del algoritmo sea adecuada. Estas iteraciones se repiten hasta que se alcanza la precisión deseada en el cálculo de la función trigonométrica.
+
+Por ejemplo, para calcular el seno de un ángulo dado utilizando el algoritmo CORDIC Trigonométrico, se inicializan las coordenadas $(X, Y)$ con valores apropiados y se realizan iteraciones de rotación y desplazamiento hasta que se alcanza la precisión deseada. El valor de $Y$ al final de las iteraciones representa el valor aproximado del seno del ángulo dado. De manera similar, se pueden calcular el coseno, el arcoseno y el arcocoseno utilizando adaptaciones del algoritmo CORDIC Trigonométrico.
+
+
+La precisión y la convergencia del algoritmo CORDIC Trigonométrico dependen del número de iteraciones realizadas y del número de bits utilizados para representar los valores de las coordenadas. En general, el algoritmo converge rápidamente y proporciona resultados precisos con un número suficiente de iteraciones. Sin embargo, la precisión puede verse afectada por la representación finita de los números en sistemas digitales y por la resolución de las operaciones de rotación y desplazamiento.
+
+
+El algoritmo CORDIC trigonométrico se utiliza en una amplia gama de aplicaciones en sistemas digitales, incluyendo procesamiento de señales, comunicaciones, gráficos por computadora, sistemas de navegación, y más. Se utiliza para calcular funciones trigonométricas de manera eficiente y precisa en sistemas donde se requieren cálculos frecuentes de ángulos y funciones trigonométricas. Su implementación en hardware digital es especialmente adecuada debido a su simplicidad y eficiencia en términos de recursos computacionales.
 
 
 
-\subsection{Identificación de los estados del sistema}
+\subsection{CORDIC vectorial}
+\label{sec:orgdaca22c}
+
+
+El algoritmo CORDIC Vectorial utiliza un enfoque similar al CORDIC Trigonométrico, pero se enfoca en manipular vectores en lugar de solo ángulos. Permite realizar rotaciones y transformaciones de coordenadas en sistemas de coordenadas cartesianas o polares de manera eficiente. 
+
+En un sistema de coordenadas cartesianas, las operaciones del CORDIC Vectorial pueden utilizarse para rotar un vector en el plano XY. Por otro lado, en un sistema de coordenadas polares, el algoritmo puede utilizarse para convertir coordenadas cartesianas a polares y viceversa, así como para realizar rotaciones de vectores en el plano radial.
+
+La eficiencia y precisión del CORDIC Vectorial lo hacen adecuado para una variedad de aplicaciones en sistemas digitales, como procesamiento de señales, modulación y demodulación en sistemas de comunicaciones, y transformaciones geométricas en gráficos por computadora. Además, su estructura iterativa permite su implementación eficiente en hardware digital, lo que lo convierte en una opción popular en sistemas embebidos y sistemas de tiempo real donde los recursos son limitados.
+
+
+\subsection{CORDIC logarítmico}
+\label{sec:orgdaca22c}
+
+El algoritmo CORDIC logarítmico utiliza una serie de iteraciones para aproximar funciones logarítmicas y exponenciales, así como operaciones relacionadas como la raíz cuadrada y el exponente. A través de un proceso iterativo, el algoritmo calcula las aproximaciones de estas funciones con una precisión deseada.
+
+Una de las características clave del CORDIC logarítmico es su capacidad para calcular estas funciones de manera eficiente y precisa utilizando un enfoque iterativo y estructuras de datos simples. Esto lo hace adecuado para su implementación en sistemas digitales donde se requieren cálculos de funciones no trigonométricas con recursos limitados.
+
+El CORDIC logarítmico tiene una amplia gama de aplicaciones en sistemas digitales, incluyendo procesamiento de señales, compresión de datos, criptografía y más. Se utiliza en situaciones donde se requiere el cálculo rápido y preciso de funciones logarítmicas y exponenciales, así como operaciones relacionadas como la raíz cuadrada y el exponente. Su eficiencia y precisión lo hacen valioso en una variedad de aplicaciones de sistemas digitales.
+
+
+
+
+\section{Implementación CORDIC rotator}
+\label{sec:orgc1c4017}
+
+En esta sección, se detalla la implementación del módulo CORDIC Rotator en Verilog. El módulo CORDIC Rotator es una implementación hardware del algoritmo CORDIC (Coordinate Rotation Digital Computer), diseñado para realizar rotaciones de vectores en el plano cartesiano. El algoritmo CORDIC se utiliza ampliamente en sistemas digitales para calcular funciones trigonométricas, transformaciones de coordenadas y otras operaciones matemáticas de manera eficiente. En esta sección, se explicará paso a paso la implementación del módulo CORDIC rotator, incluyendo la configuración de parámetros, la definición de la tabla de arco tangente, las iteraciones del algoritmo y la salida del módulo. Cada parte de la implementación se analizará en detalle, acompañada de su correspondiente código en Verilog.
+
+\subsection{Configuración de Tiempo y Declaración de Módulo}
+
+El código comienza con la configuración del \texttt{timescale} y la definición de parámetros utilizados en el módulo. El parámetro \texttt{c parameter} determina el ancho de bits de los datos de entrada y salida, mientras que \texttt{STG} se utiliza para definir el ancho de bits de los vectores \texttt{X} e \texttt{Y}. Luego, se declara el módulo \texttt{cordic rotator} con sus entradas (\texttt{clock}, \texttt{angle}, \texttt{Xin}, \texttt{Yin}) y salidas (\texttt{Xout}, \texttt{Yout}).
+
+\begin{lstlisting}[language=Verilog]
+`timescale 1ns/100ps
+
+module cordic_rotator (
+    input clock,
+    input signed [31:0] angle,
+    input signed [c_parameter - 1:0] Xin,
+    input signed [c_parameter - 1:0] Yin,
+    output signed [c_parameter:0] Xout,
+    output signed [c_parameter:0] Yout
+);
+
+parameter c_parameter = 16;
+localparam STG = c_parameter;
+\end{lstlisting}
+
+\subsection{Declaración de la Tabla \texttt{atan\_table}}
+
+La tabla \texttt{atan\_table} contiene los valores de la función arco tangente utilizados en el algoritmo CORDIC. Estos valores están precalculados y se utilizan para realizar las operaciones de rotación en el módulo. La tabla está definida como un arreglo de 31 bits con 31 entradas, cada una representando un ángulo específico.
+
+\begin{lstlisting}[language=Verilog]
+
+wire signed [31:0] atan_table [0:30];
+assign atan_table[00] = 32'b00100000000000000000000000000000; 
+// Resto de asignaciones de la tabla atan_table...
+
+\end{lstlisting}
+
+\subsection{Inicialización de registros y asignación de cuadrante}
+
+Se inicializan los registros \texttt{X}, \texttt{Y} y \texttt{Z}, que se utilizan para almacenar los datos en cada etapa del algoritmo CORDIC. Luego, se calcula el cuadrante en el que se encuentra el ángulo de rotación para determinar cómo se deben tratar los datos de entrada.
+
+\subsubsection{Cuadrante I}
+
+En el cuadrante I, el ángulo de rotación se encuentra en el rango de 0 a $\pi$/2. En este caso, no es necesario realizar ninguna modificación en los datos de entrada, ya que están en el rango adecuado para ser procesados por el algoritmo CORDIC. Por lo tanto, los valores de las coordenadas X e Y del vector de entrada (\texttt{Xin} y \texttt{Yin}) se asignan directamente a los registros \texttt{X[0]} y \texttt{Y[0]}, respectivamente. Además, el ángulo de rotación (\texttt{angle}) se asigna directamente al registro \texttt{Z[0]}.
+
+\begin{lstlisting}[language=Verilog]
+       case (quadrant)
+           2'b00: begin // Cuadrante I
+               X[0] <=   Xin;
+               Y[0] <=   Yin;
+               Z[0] <=   angle;
+\end{lstlisting}
+
+Este caso se activa cuando los bits de signo del ángulo son 0, indicando que el ángulo se encuentra en el primer cuadrante.
+
+\subsubsection{Cuadrante II}
+
+En el cuadrante II, el ángulo de rotación se encuentra en el rango de $\pi$/2 a $\pi$. Para ajustar los datos de entrada al rango adecuado para el algoritmo CORDIC, se realiza una pre-rotación del ángulo. En este caso, el ángulo se resta de $\pi$ para asegurar que esté dentro del rango de -$\pi$/2 a 0. Los valores de las coordenadas X e Y del vector de entrada se asignan a los registros \texttt{X[0]} y \texttt{Y[0]}, respectivamente, de la misma manera que en el cuadrante I.
+
+\begin{lstlisting}[language=Verilog]
+       2'b01: begin // Cuadrante II
+               X[0] <=    Xin;
+               Y[0] <=    Yin;
+               Z[0] <=  32'b10000000000000000000000000000000 - angle;                  
+\end{lstlisting}
+
+Este caso se activa cuando el bit de signo más significativo del ángulo es 0 y el siguiente bit es 1, indicando que el ángulo se encuentra en el segundo cuadrante.
+
+\subsubsection{Cuadrante III}
+
+En el cuadrante III, el ángulo de rotación se encuentra en el rango de -$\pi$ a -$\pi$/2. Al igual que en el cuadrante II, se realiza una pre-rotación del ángulo restando $\pi$ para asegurar que esté dentro del rango de -$\pi$/2 a 0. Los valores de las coordenadas X e Y del vector de entrada se asignan a los registros \texttt{X[0]} y \texttt{Y[0]}, respectivamente, de la misma manera que en los cuadrantes I y II.
+
+\begin{lstlisting}[language=Verilog]
+       2'b10: begin // Cuadrante III
+               X[0] <=    Xin;
+               Y[0] <=    Yin;
+               Z[0] <=    angle - 32'b10000000000000000000000000000000; 
+\end{lstlisting}
+
+Este caso se activa cuando el bit de signo más significativo del ángulo es 1 y el siguiente bit es 0, indicando que el ángulo se encuentra en el tercer cuadrante.
+
+\subsubsection{Cuadrante IV}
+
+En el cuadrante IV, el ángulo de rotación se encuentra en el rango de -$\pi$/2 a 0. Para ajustar los datos de entrada al rango adecuado para el algoritmo CORDIC, se realiza una pre-rotación del ángulo restando 2$\pi$ para asegurar que esté dentro del rango de -$\pi$/2 a -$\pi$. Los valores de las coordenadas X e Y del vector de entrada se asignan a los registros \texttt{X[0]} y \texttt{Y[0]}, respectivamente, de la misma manera que en los cuadrantes I, II y III.
+
+
+\begin{lstlisting}[language=Verilog]
+       2'b10: begin // Cuadrante III
+               X[0] <=    Xin;
+               Y[0] <=    Yin;
+               Z[0] <=    angle - 32'b10000000000000000000000000000000; 
+\end{lstlisting}
+
+Este caso se activa cuando los bits de signo del ángulo son 1, indicando que el ángulo se encuentra en el cuarto cuadrante.
+
+
+
+\subsection{Banco de pruebas}
+
+El banco de pruebas proporcionado se encarga de simular el módulo \texttt{cordic\_rotator} y generar formas de onda de entrada para probar su funcionalidad. Aquí tienes una explicación detallada de su funcionamiento:
+
+\subsubsection{Parámetros y variables locales}
+Se definen algunos parámetros y variables locales para el tamaño de los datos de entrada (\texttt{SZ}), los valores booleanos (\texttt{FALSE} y \texttt{TRUE}), y el valor de la señal de entrada (\texttt{VALUE}), que se reduce para ajustarse a la ganancia del sistema.
+
+\begin{lstlisting}[language=Verilog]
+
+localparam SZ = 16; 
+
+reg [SZ-1:0] Xin, Yin;
+reg [31:0] angle;
+wire [SZ:0] Xout, Yout;
+reg CLK_100MHZ;
+
+localparam FALSE = 1'b0;
+localparam TRUE = 1'b1;
+
+// reducido por un factor de 1.647 ya que es la ganancia del sistema (k)
+localparam VALUE = 32000/1.647; 
+
+\end{lstlisting}
+
+\subsubsection{Inicialización}
+Antes de comenzar la simulación, se inicializan las variables y las señales de entrada. Se establece \texttt{start} en \texttt{FALSE}, se inicializa la señal de reloj \texttt{CLK\_100MHZ}, el ángulo en cero, y se establece un valor inicial para \texttt{Xin} y \texttt{Yin}.
+
+\begin{lstlisting}[language=Verilog]
+initial
+begin
+    start = FALSE;
+    CLK_100MHZ = 1'b0;
+    angle = 0;
+    Xin = VALUE;
+    Yin = 1'd0;
+    i = 0;
+  
+    #1000;
+    @(posedge CLK_100MHZ);
+    start = TRUE;
+\end{lstlisting}
+
+\subsubsection{Generación de formas de onda}
+Durante la simulación, se genera una señal de reloj de 100 MHz (\texttt{CLK\_100MHZ}). Después de un breve período de espera, se activa \texttt{start} para indicar que la simulación comienza y se comienza a generar una secuencia de ángulos para probar el módulo \texttt{cordic\_rotator}.
+
+\begin{lstlisting}[language=Verilog]
+for (i = 0; i < 360; i = i + 1)  
+
+begin
+    @(posedge CLK_100MHZ);
+    #11700
+    start = FALSE;
+    angle = ((1 << 32)*(i+1))/360;
+end
+\end{lstlisting}
+
+\subsubsection{Generación del reloj}
+Se genera una señal de reloj de 100 MHz (\texttt{CLK\_100MHZ}) con una duración de tiempo determinada por \texttt{CLK100\_SPEED}.
+
+\begin{lstlisting}[language=Verilog]
+parameter CLK100_SPEED = 10; // 100Mhz = 10nS
+
+initial
+begin
+    CLK_100MHZ = 1'b0;
+    $display("CLK_100MHZ iniciado");
+    #5;
+    forever
+    begin
+        #(CLK100_SPEED/2) CLK_100MHZ = 1'b1;
+        #(CLK100_SPEED/2) CLK_100MHZ = 1'b0;
+    end
+end
+\end{lstlisting}
+
+
+\subsubsection{Salida del módulo}
+
+Finalmente, se asignan las salidas \texttt{Xout} y \texttt{Yout} del módulo con los valores calculados después de completar todas las iteraciones del algoritmo CORDIC. Estas salidas representan las coordenadas rotadas del vector de entrada.
+
+\begin{lstlisting}[language=Verilog]
+
+        assign Xout = X[STG - 1];
+        assign Yout = Y[STG - 1];
+
+\end{lstlisting}
+
+
+
+\subsubsection{Identificación de los estados del sistema}
 \label{sec:orgdaca22c}
 
 El sistema Realità, al ser un sistema autónomo para la captura de información topográfica, presenta diversos estados durante su funcionamiento. Para una mejor comprensión del sistema, se detallan a continuación los estados principales:
 
 \begin{enumerate}
 
-\item Estado de Inicio:
+\item Estado de inicio:
 
 \begin{enumerate}
     \item El sistema se encuentra inactivo, a la espera de instrucciones.

@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.30)  18 APR 2024 13:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.8.30)  23 APR 2024 19:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./Testing.tex
-(Testing.tex
+**"./Cordic rotator.tex"
+(Cordic rotator.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-07-04>
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -504,7 +504,7 @@ Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
 e.sty
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2022-07-04 L3 programming layer (loader)
+Package: expl3 2022-07-04 L3 programming layer (loader) 
 
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
@@ -612,7 +612,7 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/grffile\grffile.sty
 Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
 y)
-Package grffile Info: This package is an empty stub for compatibility on input
+Package grffile Info: This package is an empty stub for compatibility on input 
 line 40.
 )
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
@@ -772,12 +772,36 @@ Package babel Info: Making > an active character on input line 722.
 Package babel Info: Importing font and identification data for spanish
 (babel)             from babel-es.ini. Reported on input line 11.
 )
+(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count317
+\lst@gtempboxa=\box103
+\lst@token=\toks48
+\lst@length=\count318
+\lst@currlwidth=\dimen298
+\lst@column=\count319
+\lst@pos=\count320
+\lst@lostspace=\dimen299
+\lst@width=\dimen300
+\lst@newlines=\count321
+\lst@lineno=\count322
+\lst@maxwidth=\dimen301
+
+(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count323
+\lst@skipnumbers=\count324
+\lst@framebox=\box104
+)
+(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip65
 \bibsep=\skip66
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count317
+\c@NAT@ctr=\count325
 )
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2022-06-20 v7.00s Hypertext links for LaTeX
@@ -835,11 +859,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count318
+\c@section@level=\count326
 )
-\@linkdim=\dimen298
-\Hy@linkcounter=\count319
-\Hy@pagecounter=\count320
+\@linkdim=\dimen302
+\Hy@linkcounter=\count327
+\Hy@pagecounter=\count328
  (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2022-06-20 v7.00s Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -850,7 +874,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count321
+\Hy@SavedSpaceFactor=\count329
  (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2022-06-20 v7.00s Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -863,14 +887,14 @@ Package hyperref Info: Plain pages OFF on input line 4177.
 Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4408.
-\c@Hy@tempcnt=\count322
+\c@Hy@tempcnt=\count330
 
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4746.
-\XeTeXLinkMargin=\dimen299
+\XeTeXLinkMargin=\dimen303
 
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -880,9 +904,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count323
-\Field@Width=\dimen300
-\Fld@charsize=\dimen301
+\Fld@menulength=\count331
+\Field@Width=\dimen304
+\Fld@charsize=\dimen305
 Package hyperref Info: Hyper figures OFF on input line 6024.
 Package hyperref Info: Link nesting OFF on input line 6029.
 Package hyperref Info: Hyper index ON on input line 6032.
@@ -895,9 +919,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6054.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count324
-\c@Item=\count325
-\c@Hfootnote=\count326
+\Hy@abspage=\count332
+\c@Item=\count333
+\c@Hfootnote=\count334
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
@@ -908,8 +932,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count327
-\c@bookmark@seq@number=\count328
+\Fld@listcount=\count335
+\c@bookmark@seq@number=\count336
 
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
 echeck.sty
@@ -930,18 +954,18 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count329
-\Gm@cntv=\count330
-\c@Gm@tempcnt=\count331
-\Gm@bindingoffset=\dimen302
-\Gm@wd@mp=\dimen303
-\Gm@odd@mp=\dimen304
-\Gm@even@mp=\dimen305
-\Gm@layoutwidth=\dimen306
-\Gm@layoutheight=\dimen307
-\Gm@layouthoffset=\dimen308
-\Gm@layoutvoffset=\dimen309
-\Gm@dimlist=\toks48
+\Gm@cnth=\count337
+\Gm@cntv=\count338
+\c@Gm@tempcnt=\count339
+\Gm@bindingoffset=\dimen306
+\Gm@wd@mp=\dimen307
+\Gm@odd@mp=\dimen308
+\Gm@even@mp=\dimen309
+\Gm@layoutwidth=\dimen310
+\Gm@layoutheight=\dimen311
+\Gm@layouthoffset=\dimen312
+\Gm@layoutvoffset=\dimen313
+\Gm@dimlist=\toks49
 
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
@@ -959,20 +983,17 @@ rs
 )
 
 Package hyperref Warning: Invalid language identifier ` spanish '
-(hyperref)                for option `pdflang' (RFC 3066) on input line 48.
+(hyperref)                for option `pdflang' (RFC 3066) on input line 49.
 
-(Testing.aux
+(Cordic rotator.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 
 
-LaTeX Warning: Label `fig:diagBloques' multiply defined.
-
-
 LaTeX Warning: Label `subsec:org12e44a2' multiply defined.
 
 
-LaTeX Warning: Label `subsec:org12e44a2' multiply defined.
+LaTeX Warning: Label `sec:orgdaca22c' multiply defined.
 
 
 LaTeX Warning: Label `sec:orgdaca22c' multiply defined.
@@ -1002,41 +1023,41 @@ LaTeX Warning: Label `sec:orgc1c4017' multiply defined.
 LaTeX Warning: Label `sec:org24980a8' multiply defined.
 
 )
-\openout1 = `Testing.aux'.
+\openout1 = `"Cordic rotator.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count332
-\scratchdimen=\dimen310
-\scratchbox=\box103
-\nofMPsegments=\count333
-\nofMParguments=\count334
-\everyMPshowfont=\toks49
-\MPscratchCnt=\count335
-\MPscratchDim=\dimen311
-\MPnumerator=\count336
-\makeMPintoPDFobject=\count337
-\everyMPtoPDFconversion=\toks50
+\scratchcounter=\count340
+\scratchdimen=\dimen314
+\scratchbox=\box105
+\nofMPsegments=\count341
+\nofMParguments=\count342
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count343
+\MPscratchDim=\dimen315
+\MPnumerator=\count344
+\makeMPintoPDFobject=\count345
+\everyMPtoPDFconversion=\toks51
 )
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -1048,12 +1069,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Info: Redefining \. on input line 50.
-LaTeX Info: Redefining \% on input line 50.
-Package hyperref Info: Link coloring OFF on input line 50.
- (Testing.out) (Testing.out)
+LaTeX Info: Redefining \. on input line 53.
+LaTeX Info: Redefining \% on input line 53.
+\c@lstlisting=\count346
+Package hyperref Info: Link coloring OFF on input line 53.
+ (Cordic rotator.out) (Cordic rotator.out)
 \@outlinefile=\write4
-\openout4 = `Testing.out'.
+\openout4 = `"Cordic rotator.out"'.
 
 
 *geometry* driver: auto-detecting
@@ -1063,7 +1085,7 @@ Package hyperref Info: Link coloring OFF on input line 50.
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: twoside
+* modes: twoside 
 * h-part:(L,W,R)=(56.9055pt, 469.47049pt, 71.13188pt)
 * v-part:(T,H,B)=(71.13188pt, 717.00946pt, 56.9055pt)
 * \paperwidth=597.50787pt
@@ -1090,10 +1112,10 @@ Package hyperref Info: Link coloring OFF on input line 50.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Figuras/logoFIUBA.pdf, id=246, 460.9062pt x 153.61644pt>
+<Figuras/logoFIUBA.pdf, id=290, 460.9062pt x 153.61644pt>
 File: Figuras/logoFIUBA.pdf Graphic file (type pdf)
 <use Figuras/logoFIUBA.pdf>
-Package pdftex.def Info: Figuras/logoFIUBA.pdf  used on input line 60.
+Package pdftex.def Info: Figuras/logoFIUBA.pdf  used on input line 63.
 (pdftex.def)             Requested size: 375.57782pt x 125.18338pt.
 [1
 
@@ -1102,7 +1124,7 @@ goFIUBA.pdf>]
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd)
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd)
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
@@ -1113,70 +1135,60 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 LaTeX Warning: No \author given.
 
-(Testing.toc
+(Cordic rotator.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [3])
-\tf@toc=\write5
-\openout5 = `Testing.toc'.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+1.
 
-LaTeX Info: Redefining \. on input line 114.
-LaTeX Info: Redefining \% on input line 114.
+(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+[3]
+LaTeX Info: Redefining \. on input line 57.
+LaTeX Info: Redefining \% on input line 57.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[4]
-<./Figuras/Prototipo.png, id=337, 481.04718pt x 428.35031pt>
-File: ./Figuras/Prototipo.png Graphic file (type png)
-<use ./Figuras/Prototipo.png>
-Package pdftex.def Info: ./Figuras/Prototipo.png  used on input line 124.
-(pdftex.def)             Requested size: 469.47049pt x 418.04837pt.
-LaTeX Info: Redefining \. on input line 129.
-LaTeX Info: Redefining \% on input line 129.
+[4])
+\tf@toc=\write5
+\openout5 = `"Cordic rotator.toc"'.
+
+LaTeX Info: Redefining \. on input line 115.
+LaTeX Info: Redefining \% on input line 115.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
-(fancyhdr)                Make it at least 14.6104pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.6104pt}.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[5 <./Figuras/Prototipo.png>]
-<./Figuras/Fusi贸n_de_Datos_para_Nube_de_Puntos_3D.pdf, id=346, 845.07718pt x 5
-97.19106pt>
-File: ./Figuras/Fusi贸n_de_Datos_para_Nube_de_Puntos_3D.pdf Graphic file (type
-pdf)
-<use ./Figuras/Fusi贸n_de_Datos_para_Nube_de_Puntos_3D.pdf>
-Package pdftex.def Info: ./Figuras/Fusi贸n_de_Datos_para_Nube_de_Puntos_3D.pdf
- used on input line 141.
-(pdftex.def)             Requested size: 445.99553pt x 315.17023pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 157.
-LaTeX Info: Redefining \% on input line 157.
+[5]
+LaTeX Info: Redefining \. on input line 147.
+LaTeX Info: Redefining \% on input line 147.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.61858pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.61858pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
 (fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
 
-[6 <./Figuras/Fusi贸n_de_Datos_para_Nube_de_Puntos_3D.pdf>]
-LaTeX Info: Redefining \. on input line 188.
-LaTeX Info: Redefining \% on input line 188.
+[6]
+LaTeX Info: Redefining \. on input line 167.
+LaTeX Info: Redefining \% on input line 167.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.6104pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.6104pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
@@ -1184,23 +1196,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
 
 [7]
-LaTeX Info: Redefining \. on input line 229.
-LaTeX Info: Redefining \% on input line 229.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 186.
+LaTeX Info: Redefining \% on input line 186.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.61858pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.61858pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
 
 [8]
-LaTeX Info: Redefining \. on input line 285.
-LaTeX Info: Redefining \% on input line 285.
+Underfull \vbox (badness 6927) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 208.
+LaTeX Info: Redefining \% on input line 208.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.6104pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.6104pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
@@ -1208,11 +1224,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
 
 [9]
-LaTeX Info: Redefining \. on input line 328.
-LaTeX Info: Redefining \% on input line 328.
+(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty
+File: lstlang2.sty 2020/03/24 1.8d listings language file
+)
+(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang3.sty
+File: lstlang3.sty 2020/03/24 1.8d listings language file
+)
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 229.
+LaTeX Info: Redefining \. on input line 232.
+LaTeX Info: Redefining \% on input line 232.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.61858pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.61858pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
@@ -1220,19 +1247,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
 
 [10]
-Overfull \hbox (3.49292pt too wide) in paragraph at lines 386--386
-[]|\T1/cmr/m/n/12 Procesamiento|
- []
+LaTeX Info: Redefining \. on input line 262.
+LaTeX Info: Redefining \% on input line 262.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 386--386
-[]|\T1/cmr/m/n/12 Finalizaci髇 de pro-ce-sa-
- []
-
-LaTeX Info: Redefining \. on input line 402.
-LaTeX Info: Redefining \% on input line 402.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt):
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.6104pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.6104pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
@@ -1240,11 +1259,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
 
 [11]
-LaTeX Info: Redefining \. on input line 402.
-LaTeX Info: Redefining \% on input line 402.
+Overfull \hbox (16.86496pt too wide) in paragraph at lines 267--268
+[][][][][][][][][][][][][][][][][][] 
+ []
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
+Overfull \hbox (30.96164pt too wide) in paragraph at lines 280--281
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+LaTeX Info: Redefining \. on input line 292.
+LaTeX Info: Redefining \% on input line 292.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.61858pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.61858pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
@@ -1252,11 +1279,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
 
 [12]
-LaTeX Info: Redefining \. on input line 485.
-LaTeX Info: Redefining \% on input line 485.
+Overfull \hbox (30.96164pt too wide) in paragraph at lines 294--295
+[][][][][][][][][][][][][][][][][][] 
+ []
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
+Overfull \hbox (38.00998pt too wide) in paragraph at lines 320--321
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \vbox (badness 1478) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 327.
+LaTeX Info: Redefining \% on input line 327.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.6104pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.6104pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
@@ -1264,43 +1303,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
 
 [13]
-Underfull \hbox (badness 5189) in paragraph at lines 498--499
-\T1/cmr/m/n/12 gis-tre ade-cua-da-men-te un
- []
+Underfull \vbox (badness 2735) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 360.
+LaTeX Info: Redefining \% on input line 360.
 
 
-Overfull \hbox (30.44618pt too wide) in paragraph at lines 492--507
- [][]
- []
-
-LaTeX Info: Redefining \. on input line 528.
-LaTeX Info: Redefining \% on input line 528.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt):
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.61858pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.61858pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
 
 [14]
-LaTeX Info: Redefining \. on input line 562.
-LaTeX Info: Redefining \% on input line 562.
+LaTeX Info: Redefining \. on input line 402.
+LaTeX Info: Redefining \% on input line 402.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.6104pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.6104pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
 
 [15]
-LaTeX Info: Redefining \. on input line 625.
-LaTeX Info: Redefining \% on input line 625.
+LaTeX Info: Redefining \. on input line 445.
+LaTeX Info: Redefining \% on input line 445.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.61858pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.61858pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
@@ -1308,11 +1341,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
 
 [16]
-LaTeX Info: Redefining \. on input line 672.
-LaTeX Info: Redefining \% on input line 672.
+LaTeX Info: Redefining \. on input line 477.
+LaTeX Info: Redefining \% on input line 477.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.6104pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.6104pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
@@ -1320,13 +1353,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
 
 [17]
+LaTeX Info: Redefining \. on input line 502.
+LaTeX Info: Redefining \% on input line 502.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Info: Redefining \. on input line 745.
-LaTeX Info: Redefining \% on input line 745.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt):
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.61858pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.61858pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
@@ -1334,17 +1365,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
 
 [18]
-Overfull \hbox (27.57298pt too wide) in paragraph at lines 780--807
- [][]
+Overfull \hbox (3.49292pt too wide) in paragraph at lines 544--544
+[]|\T1/cmr/m/n/12 Procesamiento| 
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 544--544
+[]|\T1/cmr/m/n/12 Finalizaci髇 de pro-ce-sa-
+ []
 
-LaTeX Info: Redefining \. on input line 814.
-LaTeX Info: Redefining \% on input line 814.
+LaTeX Info: Redefining \. on input line 613.
+LaTeX Info: Redefining \% on input line 613.
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.6104pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.6104pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
@@ -1352,23 +1385,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
 
 [19]
-LaTeX Info: Redefining \. on input line 835.
-LaTeX Info: Redefining \% on input line 835.
+LaTeX Info: Redefining \. on input line 613.
+LaTeX Info: Redefining \% on input line 613.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.61858pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.61858pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
 
 [20]
-LaTeX Info: Redefining \. on input line 890.
-LaTeX Info: Redefining \% on input line 890.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 642.
+LaTeX Info: Redefining \% on input line 642.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.6104pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.6104pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
@@ -1376,16 +1411,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
 
 [21]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 9
-07.
- (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-LaTeX Info: Redefining \. on input line 937.
-LaTeX Info: Redefining \% on input line 937.
+Underfull \hbox (badness 5189) in paragraph at lines 656--657
+\T1/cmr/m/n/12 gis-tre ade-cua-da-men-te un
+ []
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
+Overfull \hbox (30.44618pt too wide) in paragraph at lines 650--665
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 668.
+LaTeX Info: Redefining \% on input line 668.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.61858pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.61858pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
@@ -1393,60 +1431,239 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
 
 [22]
-LaTeX Info: Redefining \. on input line 955.
-LaTeX Info: Redefining \% on input line 955.
+LaTeX Info: Redefining \. on input line 701.
+LaTeX Info: Redefining \% on input line 701.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
-(fancyhdr)                Make it at least 14.6104pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.6104pt}.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
-(fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [23]
-LaTeX Info: Redefining \. on input line 967.
-LaTeX Info: Redefining \% on input line 967.
+LaTeX Info: Redefining \. on input line 732.
+LaTeX Info: Redefining \% on input line 732.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt):
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.61858pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.61858pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 
 (fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
 
-[24] (Testing.aux
+[24]
+LaTeX Info: Redefining \. on input line 782.
+LaTeX Info: Redefining \% on input line 782.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.6104pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.6104pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
+
+[25]
+LaTeX Info: Redefining \. on input line 810.
+LaTeX Info: Redefining \% on input line 810.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.61858pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.61858pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
+
+[26]
+LaTeX Info: Redefining \. on input line 844.
+LaTeX Info: Redefining \% on input line 844.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.6104pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.6104pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
+
+[27]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Info: Redefining \. on input line 903.
+LaTeX Info: Redefining \% on input line 903.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.61858pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.61858pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
+
+[28]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (27.57298pt too wide) in paragraph at lines 938--965
+ [][] 
+ []
+
+LaTeX Info: Redefining \. on input line 967.
+LaTeX Info: Redefining \% on input line 967.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.6104pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.6104pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
+
+[29]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Info: Redefining \. on input line 979.
+LaTeX Info: Redefining \% on input line 979.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[30]
+LaTeX Info: Redefining \. on input line 994.
+LaTeX Info: Redefining \% on input line 994.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[31]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Info: Redefining \. on input line 1048.
+LaTeX Info: Redefining \% on input line 1048.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[32]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Info: Redefining \. on input line 1090.
+LaTeX Info: Redefining \% on input line 1090.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[33]
+LaTeX Info: Redefining \. on input line 1110.
+LaTeX Info: Redefining \% on input line 1110.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.61858pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.61858pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
+
+[34]
+LaTeX Info: Redefining \. on input line 1113.
+LaTeX Info: Redefining \% on input line 1113.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.6104pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.6104pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
+
+[35]
+LaTeX Info: Redefining \. on input line 1125.
+LaTeX Info: Redefining \% on input line 1125.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.61858pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.61858pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
+
+[36] (Cordic rotator.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `Testing.out' has not changed.
-(rerunfilecheck)             Checksum: 4A1428CB2A11842E6CED18535AE95FD4;11562.
- )
+
+Package rerunfilecheck Warning: File `"Cordic rotator".out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `"Cordic rotator".out':
+(rerunfilecheck)             Before: 2F6D23E68A65B965C36528A78D5C73B6;13329
+(rerunfilecheck)             After:  1E358282372EE1A62C1CCCC7AD43E22F;13347.
+ ) 
 Here is how much of TeX's memory you used:
- 27407 strings out of 478338
- 536366 string characters out of 2836700
- 854891 words of memory out of 3000000
- 45096 multiletter control sequences out of 15000+600000
- 484605 words of font info for 69 fonts, out of 8000000 for 9000
+ 29405 strings out of 478338
+ 563476 string characters out of 2836700
+ 1064293 words of memory out of 3000000
+ 46956 multiletter control sequences out of 15000+600000
+ 485255 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 115i,12n,118p,1174b,801s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
-1200.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecbx1440.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecti1200.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecsl1200.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecrm2074.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\ktzam\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\ktzam\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\ktzam\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk>
-Output written on Testing.pdf (24 pages, 1425382 bytes).
+ 115i,12n,118p,862b,1958s stack positions out of 10000i,1000n,20000p,200000b,80000s
+
+pdfTeX warning (dest): name{subsection.3.11} has been referenced but does not e
+xist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.3.10} has been referenced but does not e
+xist, replaced by a fixed one
+
+ <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt14
+40.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+tcrm1200.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/d
+pi600\ecbx1440.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappe
+n/ec/dpi600\ecti1200.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour/j
+knappen/ec/dpi600\ecsl1200.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/lj
+four/jknappen/ec/dpi600\ectt1200.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fonts
+/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\ktzam\AppData\Local\MiKTeX
+\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk> <C:\Users\ktzam\AppData\Local\
+MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\ktzam\AppData\
+Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\ktzam\Ap
+pData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\kt
+zam\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk><C:/Use
+rs/ktzam/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pf
+b><C:/Users/ktzam/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmr12.pfb>
+Output written on "Cordic rotator.pdf" (36 pages, 749722 bytes).
 PDF statistics:
- 1028 PDF objects out of 1200 (max. 8388607)
- 211 named destinations out of 1000 (max. 500000)
- 508 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1336 PDF objects out of 1440 (max. 8388607)
+ 329 named destinations out of 1000 (max. 500000)
+ 586 words of extra memory for PDF output out of 10000 (max. 10000000)
+
