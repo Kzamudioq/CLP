@@ -26,7 +26,8 @@
 \usepackage{textcomp}
 \usepackage{capt-of}
 \usepackage[spanish]{babel}
-
+\usepackage{grffile}
+%\usepackage[dvips]{epsfig}
 \usepackage{listings}
 \let\bibhang\relax  % Elimina la definición previa de \bibhang
 \usepackage[numbers]{natbib}
@@ -148,6 +149,7 @@ El alcance de este documento abarca la descripción detallada del diseño e impl
 
  Se realizarán simulaciones del módulo en un entorno adecuado para evaluar su comportamiento en diversos escenarios, y se analizarán los resultados obtenidos. Asimismo, se llevará a cabo un análisis del uso de recursos de la FPGA por parte del diseño, con el objetivo de evaluar su eficiencia y escalabilidad en sistemas digitales.
 
+\newpage
 
 \section{CORDIC}
 \label{sec:orgc1c4017}
@@ -169,6 +171,8 @@ El algoritmo CORDIC (Coordinate Rotation Digital Computer) Trigonométrico es un
 En cada iteración del algoritmo CORDIC Trigonométrico, se realiza una rotación y un desplazamiento de las coordenadas $(X, Y)$. La rotación se realiza mediante el ajuste de los ángulos de las coordenadas, lo que permite acercarse al ángulo objetivo. El desplazamiento se utiliza para ajustar las magnitudes de las coordenadas y garantizar que la convergencia del algoritmo sea adecuada. Estas iteraciones se repiten hasta que se alcanza la precisión deseada en el cálculo de la función trigonométrica.
 
 Por ejemplo, para calcular el seno de un ángulo dado utilizando el algoritmo CORDIC Trigonométrico, se inicializan las coordenadas $(X, Y)$ con valores apropiados y se realizan iteraciones de rotación y desplazamiento hasta que se alcanza la precisión deseada. El valor de $Y$ al final de las iteraciones representa el valor aproximado del seno del ángulo dado. De manera similar, se pueden calcular el coseno, el arcoseno y el arcocoseno utilizando adaptaciones del algoritmo CORDIC Trigonométrico.
+
+
 
 La precisión y la convergencia del algoritmo CORDIC Trigonométrico dependen del número de iteraciones realizadas y del número de bits utilizados para representar los valores de las coordenadas. En general, el algoritmo converge rápidamente y proporciona resultados precisos con un número suficiente de iteraciones. Sin embargo, la precisión puede verse afectada por la representación finita de los números en sistemas digitales y por la resolución de las operaciones de rotación y desplazamiento.
 
@@ -209,8 +213,7 @@ Una de las características clave del CORDIC logarítmico es su capacidad para c
 El CORDIC logarítmico tiene una amplia gama de aplicaciones en sistemas digitales, incluyendo procesamiento de señales, compresión de datos, criptografía y más. Se utiliza en situaciones donde se requiere el cálculo rápido y preciso de funciones logarítmicas y exponenciales, así como operaciones relacionadas como la raíz cuadrada y el exponente. Su eficiencia y precisión lo hacen valioso en una variedad de aplicaciones de sistemas digitales.
 
 
-
-
+\newpage
 
 \section{Implementación CORDIC rotator}
 \label{sec:orgc1c4017}
@@ -413,832 +416,196 @@ Para realizar la simulación en Vivado, sigue estos pasos:
 
     \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth,natwidth=10,natheight=14]{./Figuras/New_project.png}
+    \includegraphics[width=0.8\textwidth]{./Figuras/New_project.png}
     \caption{Crear nuevo proyecto en Vivado}
-    \label{fig:esquema}
-    \end{figure}   
+    \label{fig:new_proyect}
+    \end{figure}
     
+        
     \begin{figure}[ht]
     \centering
-    \includegraphics[width=1\textwidth,natwidth=610,natheight=642]{./Figuras/add_source.png}
-    \caption{IMportacion de archivos fuente}
-    \label{fig:esquema}
+    \includegraphics[width=0.8\textwidth]{./Figuras/add_source.png}
+    \caption{Importacion de archivos fuente}
+    \label{fig:add_source}
     \end{figure} 
-    
+       
    
     
     \item \textbf{Configurar simulación:} una vez que hayas creado el proyecto. Ve a la pestaña "Flow Navigator" y selecciona "Simulation". Aquí puedes configurar las opciones de simulación, como el tipo de simulador a utilizar y los archivos de simulación a incluir.
-    
-    \begin{figure}[ht]
-    \centering
-    \includegraphics[width=1\textwidth]{./Figuras/Run_simulacion_visual.png}
-    \caption{Esquema utilizado para la simulación en Vivado}
-    \label{fig:esquema}
-    \end{figure}
-    
+
     
     \item \textbf{Ejecutar la simulación:} después de configurar la simulación, ejecútala haciendo clic en el botón "Run Simulation". Vivado ejecutará la simulación y generará resultados que podrás analizar.
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./Figuras/Run_simulacion_visual.png}
+    \caption{simulación en Vivado}
+    \label{fig:simulación}
+    \end{figure}
     
+   
+        \item \textbf{Análisis de resultados:} una vez completada la simulación, analiza los resultados en Vivado. Puedes revisar las formas de onda de las señales de entrada y salida, así como cualquier mensaje de advertencia o error que pueda haberse generado durante la simulación.
+\end{enumerate}
+
 
     \begin{figure}[ht]
     \centering
-    \includegraphics[width=1\textwidth,natwidth=610,natheight=642]{./Figuras/Resultado.png}
-    \caption{Esquema utilizado para implementación de Cordic}
+    \includegraphics[width=0.6\textwidth]{./Figuras/Resultado.png}
+    \caption{Resultados obtenidos de la simulación}
     \label{fig:esquema}
     \end{figure}
+
     
+
+\subsection{Uso de la IP VIO en el módulo \texttt{cordic\_rotator}}
+
+El uso de la IP VIO (Virtual Input/Output) en este contexto proporciona una herramienta poderosa para la simulación y depuración del algoritmo CORDIC implementado en el módulo \texttt{cordic\_rotator}. La IP VIO es una característica de las herramientas de diseño de FPGA, como Xilinx Vivado, que permite la visualización y manipulación de señales dentro de un diseño durante la simulación.
+
+Las entradas de la IP VIO están conectadas a las salidas del módulo \texttt{cordic\_rotator}, mientras que las salidas de la IP VIO se conectan a las entradas del mismo módulo. Esto permite inyectar señales controladas y observar las salidas correspondientes del algoritmo CORDIC en tiempo real durante la simulación.
+
+
+Al conectar las salidas del \texttt{cordic\_rotator} a las entradas de la IP VIO y viceversa, puedes controlar las condiciones de entrada del algoritmo CORDIC y observar las respuestas resultantes. Esto es especialmente útil para verificar el comportamiento del algoritmo bajo diferentes condiciones de entrada y para depurar posibles problemas en la lógica de diseño.
+
+
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./Figuras/IP_VIO.png}
+    \caption{IP VIO}
+    \label{fig:ip_vio}
+    \end{figure}
+
+
+
+En resumen, la IP VIO se utiliza en este contexto para proporcionar una interfaz gráfica que permite inyectar señales de entrada y observar las salidas correspondientes del algoritmo CORDIC durante la simulación. Esto facilita la depuración y validación del diseño, mejorando así la eficiencia y la precisión del algoritmo implementado.
+
+
 \subsection{Esquema}
 
 El esquema utilizado para conectar las entradas y salidas del rotador CORDIC durante la simulación en Vivado se muestra en la Figura \ref{fig:esquema}.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=1\textwidth,natwidth=610,natheight=642]{./Figuras/Run_simulacion_visual.png}
-    \caption{Esquema utilizado para la simulación en Vivado}
+    \includegraphics[width=1\textwidth]{./Figuras/schematic.png}
+    \caption{Esquema utilizado para la simulación en Vivado IP VIO y CORDIC}
     \label{fig:esquema}
 \end{figure}
+
     
-    \item \textbf{Análisis de Resultados:} Una vez completada la simulación, analiza los resultados en Vivado. Puedes revisar las formas de onda de las señales de entrada y salida, así como cualquier mensaje de advertencia o error que pueda haberse generado durante la simulación.
-\end{enumerate}
+    
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{./Figuras/squematic_cordic.png}
+    \caption{Esquema de CORDIC}
+    \label{fig:esquema}
+\end{figure}
 
 
+\subsection{Generación del archivo .bit}
 
-
-
-
-
-Con estos pasos, habrás completado tanto la simulación del diseño en Vivado como la generación del archivo .bit para programar la FPGA.
-
-
-
-\subsection{Generación del Archivo .bit}
-
-Una vez que hayas completado y verificado la simulación en Vivado, puedes proceder a generar el archivo .bit para programar la FPGA. Sigue estos pasos:
+Una vez completado y verificado la simulación en vivado, es posible generar generar el archivo .bit para programar la FPGA. A traves de los siguientes pasos:
 
 \begin{enumerate}
-    \item \textbf{Implementación del Diseño:} En Vivado, ve a la pestaña "Flow Navigator" y selecciona "Implementation". Aquí, ejecuta el proceso de implementación para sintetizar y asignar el diseño a los recursos de la FPGA.
+    \item \textbf{Implementación del diseño:} en Vivado, en la pestaña "Flow Navigator" y selecciona "Implementation". Aquí,  se ejecuta el proceso de implementación para sintetizar y asignar el diseño a los recursos de la FPGA.
     
-    \item \textbf{Generación del Bitstream:} Después de completar la implementación, ve a la pestaña "Generate Bitstream" en Vivado. Ejecuta este proceso para generar el archivo .bit, que contiene la configuración del diseño para la FPGA.
+    \item \textbf{Generación del Bitstream:} después de completar la implementación, en la pestaña "Generate Bitstream" en Vivado. Se ejecuta este proceso para generar el archivo .bit, que contiene la configuración del diseño para la FPGA.
     
-    \item \textbf{Programación de la FPGA:} Una vez generado el archivo .bit, puedes utilizarlo para programar la FPGA. Conecta la FPGA a tu computadora y utiliza el software de programación de Vivado para cargar el archivo .bit en la FPGA.
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.65\textwidth]{./Figuras/bitsteam_complete.png}
+    \caption{bitsteam completo}
+    \label{fig:bitsteam_complete}
+\end{figure}
+
+    
+    \item \textbf{Programación de la FPGA:} una vez generado el archivo .bit, se utiliza para programar la FPGA. Conecta la FPGA a tu computadora y utiliza el software de programación de Vivado para cargar el archivo .bit en la FPGA.
 \end{enumerate}
 
-Con estos pasos, habrás completado tanto la simulación del diseño en Vivado como la generación del archivo .bit para programar la FPGA.
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.65\textwidth]{./Figuras/archivo_bit.png}
+    \caption{Archivo bit}
+    \label{fig:archivo_bit}
+\end{figure}
+
+
+Con estos pasos, se completa tanto la simulación del diseño en Vivado como la generación del archivo .bit para programar la FPGA.
 
 \textbf{Nota:} El trabajo desarrollado se realizó sobre una FPGA de la firma Xilinx. La placa de desarrollo utilizada es la Arty Z7-10 de la empresa Digilent.
-
-\end{document}
-
-
-
-
-\subsection{Generación del Archivo .bit}
-
-Una vez que hayas completado y verificado la simulación en Vivado, puedes proceder a generar el archivo .bit para programar la FPGA. Sigue estos pasos:
-
-\begin{enumerate}
-    \item \textbf{Implementación del Diseño:} En Vivado, ve a la pestaña "Flow Navigator" y selecciona "Implementation". Aquí, ejecuta el proceso de implementación para sintetizar y asignar el diseño a los recursos de la FPGA.
-    
-    \item \textbf{Generación del Bitstream:} Después de completar la implementación, ve a la pestaña "Generate Bitstream" en Vivado. Ejecuta este proceso para generar el archivo .bit, que contiene la configuración del diseño para la FPGA.
-    
-    \item \textbf{Programación de la FPGA:} Una vez generado el archivo .bit, puedes utilizarlo para programar la FPGA. Conecta la FPGA a tu computadora y utiliza el software de programación de Vivado para cargar el archivo .bit en la FPGA.
-\end{enumerate}
-
-Con estos pasos, habrás completado tanto la simulación del diseño en Vivado como la generación del archivo .bit para programar la FPGA.
-
-\textbf{Nota:} El trabajo desarrollado se realizó sobre una FPGA de la firma Xilinx. La placa de desarrollo utilizada es la Arty Z7-10 de la empresa Digilent.
-
-\end{document}
-
-El sistema Realità, al ser un sistema autónomo para la captura de información topográfica, presenta diversos estados durante su funcionamiento. Para una mejor comprensión del sistema, se detallan a continuación los estados principales:
-
-\begin{enumerate}
-
-\item Estado de inicio:
-
-\begin{enumerate}
-    \item El sistema se encuentra inactivo, a la espera de instrucciones.
-    \item Los sensores están desactivados y no se está capturando información.
-    \item El sistema espera la interacción del usuario para iniciar el proceso de captura.
-\end{enumerate}
-
-\item Estado de configuración:
-
-\begin{enumerate}
-    \item Se configuran los parámetros de operación de cada sensor, como la frecuencia de muestreo, la resolución y el rango de medición, de acuerdo con las características del área de captura y los requerimientos del usuario.
-
-    \item El sistema valida los parámetros ingresados y se prepara para la captura.
-\end{enumerate}
-
-\item Estado de captura:
-
-\begin{enumerate}
-
-    \item Se realiza la calibración interna de los sensores para garantizar la precisión y confiabilidad de las mediciones.
-     \item Los sensores comienzan a capturar datos de forma simultánea, registrando mediciones de su respectiva naturaleza.
-
-\end{enumerate}
-
-\item Estado de procesamiento:
-
-\begin{enumerate}
-    \item El sistema fusiona los datos de los diferentes sensores en tiempo real.
-    \item Los datos capturados se procesan y analizan para generar un mapa topográfico preciso.
-    \item Se identifican y clasifican los elementos del entorno, como edificios, calles y vegetación.
-    \item Se generan metadatos que describen el mapa y las condiciones de captura.
-\end{enumerate}
-
-\item Estado de finalización:
-
-\begin{enumerate}
-    \item La captura de datos y el procesamiento finalizan.
-    \item El sistema presenta al usuario el mapa topográfico generado, junto con los metadatos correspondientes.
-    \item El usuario puede guardar el mapa y los metadatos para su posterior uso.
-\end{enumerate}
-
-\item Estado de error:
-
-\begin{enumerate}
-    \item El sistema entra en este estado si se produce un error durante la captura, el procesamiento o la finalización del proceso.
-    \item Se registra el tipo de error y la causa probable.
-    \item El usuario es notificado sobre el error y se le proporcionan instrucciones para resolverlo.
-\end{enumerate}
-
-\end{enumerate}
-
-\subsection{Definición de los eventos}
-\label{sec:descripcion-general}
-
-En el sistema Realità, los eventos que desencadenan las transiciones entre los diferentes estados son acciones o situaciones específicas que determinan el cambio de estado del sistema. Estos eventos pueden ser generados por el usuario, por los sensores o por el propio sistema como resultado de su funcionamiento.
-
-A continuación, se detalla la lista de eventos que desencadenan cada estado:
-
-\begin{enumerate}
-
-\item Estado de inicio:
-\begin{enumerate}
-    \item Evento de inicio: el usuario enciende el sistema o inicia una nueva sesión de captura.
-\end{enumerate}
-
-\item Estado de configuración:
-\begin{enumerate}
-    \item Evento de inicio de configuración: el usuario accede al menú de configuración del sistema.
-    \item Evento de modificación de parámetros: el usuario modifica los parámetros de captura, como el área de interés, la resolución deseada o el tipo de sensores a utilizar.
-    \item Evento de validación de parámetros: el sistema valida los parámetros ingresados por el usuario.
-    \item Evento de preparación para la captura: el sistema se prepara para iniciar la captura de datos de acuerdo con los parámetros configurados.
-\end{enumerate}
-
-\item Estado de captura:
-
-\begin{enumerate}
-    \item Evento de inicio de captura: el usuario da la orden de iniciar la captura de datos.
-    \item Evento de activación de sensores: los sensores se activan y comienzan a capturar datos.
-    \item Evento de calibración interna: se realiza la calibración interna de los sensores para garantizar la precisión y confiabilidad de las mediciones.
-    \item Evento de captura de datos: los sensores capturan datos de forma simultánea, registrando mediciones de su respectiva naturaleza.
-    \item Evento de fusión de datos en tiempo real: el sistema fusiona los datos de los diferentes sensores en tiempo real.
-\end{enumerate}
-
-\item Estado de procesamiento:
-\begin{enumerate}
-    \item Evento de finalización de captura: se alcanza el área de captura definida o se agota el tiempo de captura.
-    \item Evento de inicio de procesamiento: los datos capturados están listos para ser procesados.
-    \item Evento de procesamiento de datos: el sistema procesa y analiza los datos capturados para generar un mapa topográfico preciso.
-    \item Evento de identificación y clasificación de elementos: se identifican y clasifican los elementos del entorno, como edificios, calles y vegetación.
-    \item Evento de generación de metadatos: se generan metadatos que describen el mapa y las condiciones de captura.
-\end{enumerate}
-
-\item Estado de finalización:
-\begin{enumerate}
-    \item Evento de finalización de procesamiento: el procesamiento de datos finaliza y el mapa topográfico está generado.
-    \item Evento de presentación del mapa: el sistema presenta al usuario el mapa topográfico generado, junto con los metadatos correspondientes.
-    \item Evento de guardado del mapa: el usuario guarda el mapa y los metadatos para su posterior uso.
-\end{enumerate}
-
-\item Estado de error:
-\begin{enumerate}
-    \item Evento de detección de error: se produce un error durante la captura, el procesamiento o la finalización del proceso.
-    \item Evento de registro de error: se registra el tipo de error y la causa probable.
-    \item Evento de notificación de error: el usuario es notificado sobre el error y se le proporcionan instrucciones para resolverlo.
-\end{enumerate}
-
-\item Consideraciones adicionales:
-
-\begin{enumerate}
-    \item En algunos casos, un evento puede desencadenar la transición a más de un estado. Por ejemplo, el evento de detección de error puede desencadenar la transición al estado de error y al estado de finalización, dependiendo de la gravedad del error.
-    \item El sistema puede incluir mecanismos de recuperación de errores para intentar resolver los errores y volver al estado anterior.
-    \item La secuencia de eventos puede variar dependiendo de la configuración del sistema y las condiciones de funcionamiento.
-\end{enumerate}
-
-\end{enumerate}
-
-
-
-\begin{table}[htbp]
-\centering
-\caption{Tabla de estados y eventos del sistema}
-\resizebox{0.95\textwidth}{!}{%
-\begin{tabular}{|p{2.5cm}|p{5cm}|p{3.5cm}|p{7cm}|}
-\hline
-\textbf{Estado} & \textbf{Evento} & \textbf{Siguiente Estado} & \textbf{Descripción} \\ \hline
-Inicio & Inicio del sistema & Configuración & El usuario enciende el sistema o inicia una nueva sesión de captura. \\
- & Modificación de parámetros & Configuración & El usuario modifica los parámetros de captura. \\
- & Validación de parámetros & Configuración & El sistema valida los parámetros ingresados por el usuario. \\ \hline
-Configuración & Preparación para la captura & Captura & El sistema se prepara para iniciar la captura de datos. \\ \hline
-Captura & Inicio de captura & Captura & El usuario da la orden de iniciar la captura de datos. \\
- & Activación de sensores & Captura & Los sensores se activan y comienzan a capturar datos. \\
- & Calibración interna & Captura & Se realiza la calibración interna de los sensores. \\
- & Captura de datos & Captura & Los sensores capturan datos simultáneamente. \\
- & Fusión de datos en tiempo real & Captura & El sistema fusiona los datos de los sensores. \\
- & Finalización de captura & Procesamiento & Se alcanza el área de captura definida o se agota el tiempo de captura. \\ \hline
-Procesamiento & Inicio de procesamiento & Procesamiento & Los datos capturados están listos para ser procesados. \\
- & Procesamiento de datos & Procesamiento & El sistema procesa y analiza los datos capturados. \\
- & Identificación y clasificación de elementos & Procesamiento & Se identifican y clasifican los elementos del entorno. \\
- & Generación de metadatos & Procesamiento & Se generan metadatos que describen el mapa y las condiciones de captura. \\
- & Finalización de procesamiento & Finalización & El procesamiento de datos finaliza y el mapa topográfico está generado. \\ \hline
-Finalización & Presentación del mapa & Finalización & El sistema presenta al usuario el mapa topográfico generado. \\
- & Guardado del mapa & Finalización & El usuario guarda el mapa y los metadatos para su posterior uso. \\ \hline
-Cualquiera & Detección de error & Error & Se produce un error durante el proceso. \\
- & Registro de error & Error & Se registra el tipo de error y la causa probable. \\
- & Notificación de error & Error & El usuario es notificado sobre el error y se le proporcionan instrucciones. \\ \hline
-\end{tabular}%
-}
-\end{table}
-
-\subsection{Componer el árbol de transiciones}
-\label{sec:requisitos-especificos}
-
-El árbol de transiciones es una representación visual que muestra todas las posibles transiciones entre los estados del sistema y los eventos que las desencadenan. Esta representación visual es útil para comprender mejor la estructura del sistema y diseñar casos de prueba efectivos.
-
-Para componer el árbol de transiciones del sistema Realità, primero se identifican todos los estados y eventos. Luego, se trazan las transiciones entre ellos de acuerdo con las reglas definidas. Una vez completado el árbol de transiciones, se puede visualizar de manera clara cómo interactúan los diferentes elementos del sistema en respuesta a diversos eventos.
-
-
-
-\subsection{Creación de casos de prueba legales}
-\label{sec:requisitos-especificos}
-
-Los casos de prueba legales son aquellos que verifican el comportamiento correcto del sistema cuando se presentan eventos válidos. Estos casos de prueba están diseñados para probar todas las transiciones permitidas entre estados y asegurarse de que el sistema responda correctamente a cada evento.
-
-Para crear los casos de prueba legales para el sistema Realità, se identifican todos los eventos válidos y se diseñan casos de prueba específicos para cada uno de ellos. Estos casos de prueba deben cubrir todas las transiciones entre estados permitidas por el sistema, verificando que el sistema se comporte según lo esperado en cada situación.
-
-
-\begin{table}[htbp]
-    \centering
-    \caption{Casos de prueba para Realità}
-    \label{tab:casos_prueba}
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{|c|c|c|c|c|c|}
-    \hline
-    \textbf{ID} & \textbf{Evento} & \textbf{Guardia} & \textbf{Acción} & \textbf{Estado Inicial} & \textbf{Resultado Esperado} \\
-    \hline
-    1 & Inicio del sistema & - & - & Inicio & Configuración \\
-    \hline
-    2 & Modificación de parámetros & - & - & Configuración & Configuración \\
-    \hline
-    3 & Validación de parámetros & - & - & Configuración & Preparación para la captura \\
-    \hline
-    4 & Inicio de captura & - & - & Captura & Captura \\
-    \hline
-    5 & Activación de sensores & Sensores activos & - & Captura & Captura \\
-    \hline
-    6 & Calibración interna & Sensores calibrados & - & Captura & Captura \\
-    \hline
-    7 & Captura de datos & Datos capturados & - & Captura & Captura \\
-    \hline
-    8 & Fusión de datos en tiempo real & Datos fusionados & - & Captura & Procesamiento \\
-    \hline
-    9 & Inicio de procesamiento & Procesamiento iniciado & - & Procesamiento & Procesamiento \\
-    \hline
-    10 & Procesamiento de datos & Datos procesados & - & Procesamiento & Procesamiento \\
-    \hline
-    11 & Identificación y clasificación de elementos & Elementos identificados & - & Procesamiento & Procesamiento \\
-    \hline
-    12 & Generación de metadatos & Metadatos generados & - & Procesamiento & Procesamiento \\
-    \hline
-    13 & Finalización de procesamiento & Procesamiento finalizado & - & Procesamiento & Finalización \\
-    \hline
-    14 & Presentación del mapa & Mapa presentado & - & Finalización & Finalización \\
-    \hline
-    15 & Guardado del mapa & Mapa guardado & - & Finalización & Finalización \\
-    \hline
-    16 & Detección de error & Error detectado & - & Finalización & Error \\
-    \hline
-    \end{tabular}
-    }
-\end{table}
-
-\subsection{Creación de casos de prueba ilegales}
-\label{sec:requisitos-especificos}
-
-Los casos de prueba ilegales son aquellos que prueban el comportamiento del sistema cuando se presentan eventos inválidos o inesperados. Estos casos de prueba están diseñados para evaluar cómo el sistema maneja situaciones incorrectas y asegurarse de que responda de manera adecuada, como mostrar mensajes de error o tomar medidas correctivas.
-
-Para crear los casos de prueba ilegales para el sistema Realità, se identifican eventos que podrían causar transiciones no permitidas entre estados o situaciones incoherentes en el sistema. Luego se diseñan casos de prueba específicos para estos eventos, verificando que el sistema maneje adecuadamente estas condiciones inesperadas.
-
-\begin{table}[htbp]
-    \centering
-    \caption{Casos de prueba ilegales para Realità}
-    \label{tab:casos_prueba_ilegales}
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{|c|c|c|c|c|}
-    \hline
-    \textbf{No.} & \textbf{Configuración} & \textbf{Estado} & \textbf{Evento} & \textbf{Resultado} \\
-    \hline
-    1 & - & Inicio & Modificación de parámetros & Error \\
-    \hline
-    2 & Configuración & Captura & Inicio de captura & Error \\
-    \hline
-    3 & Captura & Procesamiento & Inicio de procesamiento & Error \\
-    \hline
-    4 & Procesamiento & Finalización & Presentación del mapa & Error \\
-    \hline
-    \end{tabular}
-    }
-\end{table}
-
-
-\subsection{Creación de casos de prueba para los guardias}
-\label{sec:requisitos-especificos}
-
-Los casos de prueba para los guardias son aquellos diseñados para evaluar las condiciones de seguridad y protección del sistema. Estos casos de prueba se centran en verificar que el sistema Realità pueda detectar y responder adecuadamente a situaciones de seguridad, como intentos de acceso no autorizado o manipulación maliciosa de datos.
-
-Para crear los casos de prueba para los guardias en el sistema Realità, se identifican posibles vulnerabilidades o amenazas de seguridad y se diseñan casos de prueba específicos para evaluar la capacidad del sistema para detectar y mitigar estas amenazas. Esto puede incluir pruebas de autenticación de usuarios, cifrado de datos, detección de intrusiones y otras medidas de seguridad.
-
-
-\begin{table}[htbp]
-    \centering
-    \caption{Casos de prueba para la detección de errores}
-    \label{tab:casos_prueba_errores}
-    \begin{tabular}{|c|c|c|c|p{5cm}|}
-    \hline
-    \textbf{No.} & \textbf{Estado Inicial} & \textbf{Evento} & \textbf{Estado Siguiente} & \textbf{Descripción del Caso de Prueba} \\
-    \hline
-    1 & Inicio & Detección de error & Error & Verificar que el sistema maneje correctamente la detección de un error al iniciar. \\
-    \hline
-    2 & Configuración & Registro de error & Error & Verificar que el sistema registre adecuadamente un error durante la configuración. \\
-    \hline
-    3 & Captura & Detección de error & Error & Verificar que el sistema maneje correctamente la detección de un error durante la captura. \\
-    \hline
-    4 & Procesamiento & Detección de error & Error & Verificar que el sistema maneje adecuadamente la detección de un error durante el procesamiento. \\
-    \hline
-    5 & Finalización & Detección de error & Error & Verificar que el sistema maneje correctamente la detección de un error durante la finalización. \\
-    \hline
-    \end{tabular}
-\end{table}
-
-
-\section{Bases del test}
-\label{sec:orgc1c4017}
-
-Esta sección proporciona una visión general del proyecto, incluyendo los siguientes aspectos:
-
-
-\subsection{Especificaciones del producto}
-\subsubsection{Diseño funcional general}
-
-El diseño funcional general ofrece una descripción panorámica de las funciones clave del producto, abordando sus características y capacidades fundamentales.
-
-\subsubsection{Diseño funcional detallado}
-
-Este documento detallado presenta una visión a profundidad de las funciones específicas del producto, proporcionando información pormenorizada sobre su implementación y operación.
-
-\subsubsection{Guía del usuario Realità}
-
-La guía del usuario Realità se presenta como un manual exhaustivo destinado a los usuarios finales, contiene instrucciones detalladas para aprovechar al máximo las capacidades del producto, garantizando una experiencia de usuario óptima.
-
-\subsection{Normas}
-\subsubsection{Normas internas para productos de prueba}
-
-Establecemos normas internas que actúan como directrices esenciales para la creación y ejecución de productos de prueba, asegurando coherencia y calidad en todo el proceso.
-
-\subsubsection{Libro Testing Embedded Software}
-
-Este libro representa una fuente de referencia esencial que aborda las mejores prácticas en pruebas de software integrado, su contenido se utiliza como guía para garantizar un enfoque sólido y eficiente en la fase de pruebas.
-
-\subsection{Manuales de usuario}
-\subsubsection{Manual del entorno de prueba del usuario}
-
-Este manual ofrece instrucciones detalladas sobre el entorno de prueba, proporcionando a los usuarios información clara y completa para una interacción efectiva con el sistema.
-
-\subsubsection{Manual de herramientas de prueba del usuario}
-
-La guía sobre las herramientas de prueba ofrece información detallada sobre las herramientas utilizadas en el proceso de prueba, asegurando una comprensión profunda de su funcionamiento y aplicación.
-
-\subsection{Planes del proyecto}
-\subsubsection{Plan de proyecto Realità}
-
-En el plan de proyecto Realità, se detallan todos los aspectos relacionados con la gestión y ejecución del proyecto, desde los objetivos hasta la asignación de recursos, proporciona una hoja de ruta integral para el éxito del proyecto.
-
-\subsection{Planificación}
-\subsubsection{Planificación del equipo de desarrollo Realità}
-
-La planificación detallada del equipo de desarrollo para Realità establece la estructura temporal y las tareas asignadas, garantizando una ejecución eficiente y coordinada de las actividades del equipo durante todo el proyecto.
-
-
-\section{Estrategía general del test}
-\label{sec:orgc1c4017}
-
-La estrategia de pruebas de aceptación para Realità se basa en la premisa de que las pruebas de módulos y de integración son realizadas por el equipo de desarrollo. Esta estrategia se ha elaborado después de reuniones con el comisionado, líder del trabajo y gerente de pruebas específicamente para el desarrollo del trabajo Realità.
-
-
-\subsection{Características de calidad y su importancia relativa}
-\label{sec:org24980a8}
-
-
-
-Subcaracterísticas seleccionadas:
-
-\begin{enumerate}
-
-\item Idoneidad (Suitability): verificación de que las funcionalidades e interfaces cumplan con los requisitos establecidos.
-
-\item Operabilidad (Operability): evaluación de la interfaz de usuario en términos de simplicidad e intuición.
-
-\item Precisión (Accurateness): mantenimiento de la precisión de los valores medidos en diversas condiciones de funcionamiento.
-
-\item Eficiencia (Time Behaviour): garantizar que el tiempo de respuesta ante eventos críticos sea aceptable.
-
-\item Mantenibilidad (Changeability): facilitar la actualización y adaptación del software.
-
-\end{enumerate}
-
-\subsection{Matriz de estrategia para Realità}
-\label{sec:org24980a8}
-
-Realità, como sistema autónomo diseñado para la captura eficiente y precisa de información topográfica, despliega diversas funciones esenciales para cumplir con los objetivos del proyecto.
-
-
-\begin{table}[h]
-\centering
-\begin{tabular}{|l|c|c|c|c|}
-    \hline
-    Subsistema & Funcionalidad  & Usabilidad & Eficiencia & Mantenibilidad \\
-    \hline
-    SAD & ++ & ++ & + &  \\
-    SP & ++ & + & ++ & + \\
-    SFD3D & ++ & ++ & ++ & ++ \\
-    SC & + & ++ & + & ++\\
-    \hline
-    Importancia relativa (100) & 40 & 20 & 25 & 15\\
-    \hline
-\end{tabular}
-\end{table}
-
-\subsection*{Referencias}
-
-\begin{itemize}
-    \item ++ La característica de calidad es predominante para el subsistema.
-    \item + La característica de calidad es relevante para el subsistema.
-    \item (vacío) La característica de calidad es insignificante para el subsistema.
-\end{itemize}
-
-
-A continuación, se detallan los subsistemas funcionales clave de Realità en relación con la captura de datos topográficos:
-
-\begin{enumerate}
-
-\item \textbf{Subsistema adquisición de datos (SAD)}
-\begin{enumerate}
-\item Realità emplea una variedad de sensores y controladores para garantizar una captura eficiente de datos topográficos:
-\begin{itemize}
-\item Sensores LiDAR: utilizados para la detección remota y la generación de modelos tridimensionales precisos del entorno.
-\item Sensores GPS: proporcionan información geoespacial precisa para la localización y el mapeo del terreno.
-\item Sensores de imagen con profundidad: permiten la captura de imágenes tridimensionales del entorno con información de profundidad.
-\item Sensores IMU (Unidad de Medición Inercial): utilizados para medir y registrar los movimientos y la orientación del dispositivo en tiempo real.
-\item Controladores de movimiento: responsables de coordinar y controlar los movimientos del dispositivo para garantizar una captura precisa y eficiente de los datos topográficos.
-\end{itemize}
-
-\end{enumerate}
-
-Estos componentes trabajan en conjunto para proporcionar una captura de datos integral y precisa, permitiendo a Realità cumplir con sus objetivos de manera efectiva.
-
-\item \textbf{Subsistema de procesamiento de datos (SP)}
-\begin{enumerate}
-
-\item \textbf{Microcontrolador (MC):} el microcontrolador STM32 integra toda la información de los sensores y coordina el procesamiento de datos para su posterior análisis y utilización.
-\end{enumerate}
-
-\item \textbf{Subsistema de fusión de datos 3D (SFD3D)}
-\begin{enumerate}
-
-\item \textbf{Generador de Nube de Puntos 3D:} este componente genera la nube de puntos 3D a partir de los datos fusionados, proporcionando una representación detallada del terreno topográfico.
-
-\item \textbf{Clasificación de Puntos 3D:} este algoritmo clasifica los datos capturados por los diferentes sensores para crear una representación tridimensional precisa del entorno.
-\end{enumerate}
-
-\item \textbf{Subsistema de comunicación (SC)}
-\begin{enumerate}
-\item \textbf{Sensores Wi-Fi, Bluetooth y de radio:} estos sensores permiten la comunicación inalámbrica para la coordinación, manejo, inicio y finalización de la información entre Realità y otros dispositivos o estaciones base.
-\end{enumerate}
-
-\item \textbf{Integración sinérgica del sistema completo}
-\begin{enumerate}
-\item \textbf{Integración holística para una captura integral:} la integración completa que proporciona una solución holística, maximizando la eficiencia y precisión en la captura de datos topográficos alineados con los requerimientos del proyecto.
-\end{enumerate}
-
-\end{enumerate}
-
-
-\subsection{Técnicas de diseño de pruebas}
-
-Las técnicas de diseño de pruebas desempeñan un papel crucial en el proceso de aseguramiento de la calidad de Realità, estas técnicas proporcionan el marco fundamental para evaluar la funcionalidad, usabilidad, confiabilidad y precisión del sistema autónomo de captura de información topográfica.
-
-En el contexto específico de Realità, las técnicas de diseño de pruebas se adaptan de manera precisa y meticulosa para abordar los desafíos únicos asociados con la integración de sensores multimodales, como GPS, LIDAR, sensor de imagen e IMU.
-
-\subsubsection{Pruebas de funcionalidad}
-
-\textbf{Descripción:} verificar la funcionalidad de cada componente del sistema Realità, incluyendo la captura de datos, procesamiento y generación de mapas.
-
-\textbf{Técnicas:}
-\begin{enumerate}
-    \item Pruebas unitarias: evaluar cada módulo individualmente.
-    \item Pruebas de integración: verificar la interacción entre módulos, especialmente en la fusión de datos de múltiples sensores.
-    \item Pruebas de sistema: validar la funcionalidad del sistema en su conjunto.
-\end{enumerate}
-
-\subsubsection{Pruebas de usabilidad}
-
-\textbf{Descripción:} evaluar la facilidad de uso del sistema Realità para los usuarios finales, centrándose en la interpretación de los mapas generados.
-
-\textbf{Técnicas:}
-\begin{enumerate}
-    \item Pruebas de interfaz de usuario (UI): Evaluar la interfaz para asegurar una experiencia intuitiva.
-    \item Pruebas de navegación: verificar la facilidad de movimiento y acceso a funciones clave.
-\end{enumerate}
-
-\subsubsection{Pruebas de confiabilidad}
-
-\textbf{Descripción:} asegurarse de que Realità produce resultados precisos y consistentes bajo diversas condiciones.
-
-\textbf{Técnicas:}
-\begin{enumerate}
-    \item Pruebas de estabilidad: evaluar la capacidad del sistema para manejar cargas de trabajo sostenidas.
-    \item Pruebas de estrés: exponer el sistema a condiciones extremas para evaluar su comportamiento.
-\end{enumerate}
-
-\subsubsection{Pruebas de fusión de datos}
-
-\textbf{Descripción:} garantizar que la integración de datos de sensores GPS, LIDAR, sensor de imagen e IMU genere mapas detallados y precisos.
-
-\textbf{Técnicas:}
-\begin{enumerate}
-    \item Pruebas de fusión de datos 3D: evaluar la capacidad del sistema para generar representaciones tridimensionales precisas.
-    \item Pruebas de coherencia de datos: verificar que los datos de diferentes sensores se integren de manera coherente.
-\end{enumerate}
-
-\subsubsection{Pruebas de captura de datos en campo}
-
-\textbf{Descripción:} evaluar el rendimiento de Realità durante la captura de datos topográficos en situaciones del mundo real.
-
-\textbf{Técnicas:}
-\begin{enumerate}
-    \item Pruebas de campo simuladas: emular condiciones del mundo real para evaluar la precisión y eficacia de la captura de datos.
-\end{enumerate}
-
-
-\begin{table}[h]
-\centering
-\begin{tabular}{|l|c|c|c|c|c|c|}
-\hline
-\textbf{Prueba} &\textbf{Idoneidad} & \textbf{Operabilidad} & \textbf{Precisión} & \textbf{Tiempo} & \textbf{Cambiabilidad}\\
-\hline
-Unitarias & & ++ & + & + & + \\
-Integración & & ++ & & ++ &   \\
-Sistema & & + & ++ & ++ & \\
-UI & & & ++ & &\\
-Navegación & & & ++ &  & \\
-Estabilidad & & + & ++ &  &\\
-Estrés & & + & ++ & & \\
-SFD3D & ++ & ++ & ++ & ++ & \\
-Coherencia  & & & ++ & &\\
-Simuladas & & ++ & ++ & ++ & ++\\
-\hline
-\end{tabular}
-\caption{Matriz de Técnicas de Diseño para Pruebas en Realità}
-\label{tab:design_techniques_matrix}
-\end{table}
-
-
-\subsection{Esfuerzo estimado}
-
-La estimación de esfuerzo es un componente vital en la planificación de pruebas de aceptación para el proyecto Realità, al abordar la complejidad y amplitud del sistema autónomo de captura de datos topográficos, es esencial prever y asignar recursos de manera precisa.
-
-Esta subsección se centra en la evaluación cuidadosa de las tareas relacionadas con las pruebas, considerando factores como la magnitud de la implementación, la diversidad de las técnicas de prueba y las posibles contingencias, una estimación realista y fundamentada no solo facilita la asignación adecuada de recursos, sino que también sirve como un indicador crucial para evaluar la viabilidad temporal y financiera del proyecto Realità.
-
-\begin{table}[h]
-\centering
-\begin{tabular}{|l |r|}
-\hline
-\textbf{Actividad} & \textbf{Esfuerzo (horas)} \\
-\hline
-Plan de pruebas & 20 \\
-Fase de planificación y control & 80 \\
-Gerencia de pruebas & 48 \\
-Gerencia de configuración de pruebas & 28 \\
-Soporte metodológico & 44 \\
-Fase de preparación & 32 \\
-Fase de especificación & 80 \\
-Fase de ejecución & 200 \\
-Fase de finalización & 16 \\
-\hline
-\textbf{Total} & \textbf{548} \\
-\hline
-\end{tabular}
-\caption{Esfuerzo estimado para el proceso de pruebas}
-\label{tab:estimated_effort}
-\end{table}
-
-
-\subsection{Planificación}
-
-La planificación meticulosa es esencial para el éxito de cualquier proyecto, y las pruebas de aceptación para Realità no son la excepción, en esta fase, se delinea un camino claro que abarca desde la elaboración del plan de pruebas hasta la finalización del informe de resultados y conclusiones, cada actividad se ha calendarizado de manera estratégica para cumplir con el ambicioso objetivo de completar el proyecto dentro del periodo del 10 de marzo al 30 de junio.
-
-Con un enfoque organizado y detallado, se busca asegurar la eficiencia y efectividad en cada etapa del proceso, contribuyendo así al desarrollo exitoso del sistema autónomo de captura de datos topográficos.
-
-\begin{table}[h]
-\centering
-\begin{tabular}{|l|l|l|l|}
-\hline
-\textbf{Actividad} & \textbf{Inicio} & \textbf{Fin} & \textbf{Responsable} \\
-\hline
-Plan de pruebas & 10/03 & 19/03 & Equipo de Pruebas \\
-\hline
-\multicolumn{4}{|c|}{\textbf{Fase de Planificación}} \\
-\hline
-Elaboración del documento de plan de pruebas & 20/03 & 31/03 & Líder de Pruebas \\
-Revisión del plan con el equipo & 01/04 & 09/04 & Equipo de Pruebas \\
-Configuración de pruebas & 10/04 & 23/04 & Ingeniero de Configuración \\
-Soporte metodológico & 24/04 & 07/05 & Especialista en Metodología \\
-\hline
-\multicolumn{4}{|c|}{\textbf{Fase de Preparación}} \\
-\hline
-Elaboración de casos de prueba & 15/03 & 31/03 & Analista de Pruebas \\
-Revisión de casos de prueba & 01/04 & 03/04 & Equipo de Pruebas \\
-\hline
-\multicolumn{4}{|c|}{\textbf{Fase de Ejecución}} \\
-\hline
-Ejecución de pruebas & 10/05 & 26/05 & Equipo de Pruebas \\
-\hline
-\multicolumn{4}{|c|}{\textbf{Fase de Finalización}} \\
-\hline
-Informe de resultados y conclusiones & 27/05 & 28/05 & Líder de Pruebas \\
-\hline
-\end{tabular}
-\caption{Planificación de Pruebas de Aceptación para \textit{Realità}}
-\label{tab:planning}
-\end{table}
-
-\section{Amenazas, riesgos y medidas}
-
-El entorno de pruebas para el proyecto Realità no está exento de desafíos potenciales y riesgos que podrían afectar el éxito de las pruebas de aceptación, por lo anterior se hace necesario identificar, evaluar y gestionar estas amenazas de manera proactiva garantizado la integridad y la eficacia del proceso de prueba.
-
-En esta subsección, se abordarán posibles amenazas y riesgos, desde limitaciones tecnológicas hasta cambios inesperados en los requisitos, y se propondrán medidas mitigadoras específicas.
-
-\begin{enumerate}
-  \item Posible retraso en la entrega a prueba: en caso de retrasos, se utilizará la estrategia de prueba para determinar las pruebas omitidas, asegurando una cobertura adecuada incluso bajo restricciones de tiempo.
-  \item Equipo de desarrollo disuelto después de la entrega: se garantizará la presencia de al menos un desarrollador experimentado durante la ejecución de pruebas para abordar cualquier problema inesperado y mantener el conocimiento del sistema.
-  \item Disponibilidad limitada del experto de dominio: se planificará de manera adecuada, anticipando posibles retrasos y asegurando la máxima disponibilidad del experto de dominio cuando sea necesario.
-  \item Diseñadores trabajando en el diseño funcional y guías de usuario: se garantizará la disponibilidad oportuna de los diseñadores para mantener la coherencia y reproducibilidad en el diseño funcional y las guías de usuario.
-\end{enumerate}
-
-\section{Infraestructura}
-
-\subsection{Entorno de pruebas}
-
-El equipo de pruebas está compuesto por cinco personas, durante el proyecto de prueba, se debe disponer de dos (2) PC con una configuración de hardware estándar y el software estándar utilizado por Solidly Embedded Ltd. (para software especial, consulte la sección) que requiere un espacio mínimo de 20 GB en el directorio de gestión del producto.
-
-\subsection{Herramientas de pruebas}
-
-Las siguientes herramientas de prueba son esenciales:
-
-\begin{enumerate}
-  \item Herramienta de gestión de defectos \textit{DefectTracker}.
-  \item Herramienta de gestión de cambios \textit{ChangeMaster}.
-  \item Software de planificación.
-  \item Hardware adicional para rastrear el comportamiento interno eferente a la captura de información topográfica.
-\end{enumerate}
-
-\subsection{Entorno}
-
-Se utiliza el entorno de prueba estándar, los probadores utilizan su espacio de oficina y campo durante el proyecto de prueba.
-
-\section{Organización de pruebas}
-
-\subsection{Roles de pruebas}
-
-Los siguientes roles de prueba son necesarios en este proyecto:
-
-\begin{enumerate}
-  \item Ingeniero de pruebas.
-  \item Gerente de pruebas.
-  \item Soporte metodológico.
-  \item Soporte técnico.
-  \item Experto en dominio.
-  \item Gerente de configuración de pruebas.
-\end{enumerate}
-
-
-\subsection{Personal de Pruebas}
-
-\begin{table}[h]
-\centering
-\begin{tabular}{|l |l |l|}
-\hline
-\textbf{Función} & \textbf{Nombre} & \textbf{Equivalente a Tiempo Completo} \\
-\hline
-Gerente de Pruebas & T. Testware & 0.20 \\
-Probador & P. Testcase & 1.00 \\
-Probador & F. Testscript & 1.00 \\
-Soporte & G. Allround & 1.00 \\
-Experto en Dominio & A. Experto & 0.60 (durante la ejecución de pruebas) \\
-\hline
-\end{tabular}
-\caption{Funciones y equivalente a tiempo completo del personal de pruebas}
-\label{tab:test_staff}
-\end{table}
-
-
-\section{Entregables de pruebas}
-
-\subsection{Documentación del proyecto}
-
-Se producirán los siguientes documentos durante el proyecto de prueba:
-
-\begin{enumerate}
-  \item Plan de pruebas: el documento inicial y todas sus versiones anteriores/futuras.
-  \item Informes de defectos: se informan todos los defectos observados.
-  \item Informes semanales: informes de progreso realizados por el gerente de pruebas.
-  \item Recomendación para la liberación: formalmente es el final de la fase de ejecución de pruebas.
-  \item Informe de revisión: este informe da una evaluación del proceso de pruebas durante el proyecto.
-\end{enumerate}
-
-\subsection{Testware}
-
-Los siguientes documentos son entregables del proyecto de prueba:
-
-\begin{enumerate}
-  \item Guion de pruebas: una descripción de cómo se realiza la prueba. Contiene acciones y verificaciones, relacionadas con casos de prueba, indicando la secuencia de ejecución.
-  \item Escenario de pruebas: un micro-plan de pruebas que coordina la ejecución de varios guiones de prueba y asigna probadores a los guiones de prueba.
-  \item Conjunto de datos inicial: archivos y conjuntos de datos necesarios para iniciar ciertas pruebas.
-\end{enumerate}
-
-\subsection{Almacenamiento}
-
-La estructura de directorios mostrada en la Tabla \ref{tab:directory_structure} está implementada en el servidor central de Solidly Embedded Ltd, el directorio se almacena en el directorio de gestión de productos: \texttt{\textbackslash\textbackslash PROD\_MANAG}.
-
-\begin{table}[h]
-\centering
-\begin{tabular}{|l| l|}
-\hline
-\textbf{Directorio} & \textbf{Contenido} \\
-\hline
-\texttt{ACC\_TEST\_REALITA} & Directorio principal del proyecto \\
-\texttt{PROCDOC} & Documentación del proyecto \\
-\texttt{WORK\_TESTWARE} & Directorio de trabajo para testware \\
-\texttt{FINAL\_TESTWARE} & Directorio para archivar testware \\
-\texttt{DEFECTS} & Base de datos para el almacenamiento de defectos \\
-\texttt{OTHER} & Todos los demás documentos utilizados o producidos \\
-\hline
-\end{tabular}
-\caption{Estructura de directorios}
-\label{tab:directory_structure}
-\end{table}
-
-\section{Gestión de configuración}
-
-\subsection{Control del proceso de pruebas}
-
-El progreso de las pruebas y el agotamiento del presupuesto y el tiempo se monitorean y informan durante el proyecto de pruebas. Esto se realiza semanalmente y los resultados se informan en la reunión semanal de progreso.
-
-\subsection{Gestión de defectos}
-
-Para la gestión de defectos, se utiliza la herramienta "DefectTracker", se sigue el procedimiento estándar de defectos (SolEmb 76.1 "Procedimiento de defectos").
-
-\subsection{Métricas}
-
-El jefe de pruebas realiza un seguimiento de las siguientes métricas:
-
-\begin{enumerate}
-    \item Número de defectos abiertos por categoría de gravedad en un momento dado.
-    \item Número de defectos resueltos en un período por categoría de gravedad.
-    \item Número total de defectos detectados.
-    \item Número de retrabajos por defecto.
-    \item Número total de retrabajos.
-\end{enumerate}
-
-\subsection{Ítems de gestión de configuración}
-
-El plan de pruebas está sujeto a la gestión de configuración, comenzando con la primera versión completa. El resto del testware se somete a la gestión de configuración después de la fase de finalización. Los cambios en la infraestructura de pruebas están sujetos a la gestión de configuración del departamento de soporte técnico de Solidly Embedded Ltd.
-
-
 
 \newpage
 
+\section{Análisis de la Síntesis en Vivado}
 
-\section{Bibliografía}
+El proceso de síntesis en Vivado proporciona información valiosa sobre el diseño y optimización del circuito. A continuación se presenta un análisis detallado del informe de síntesis generado:
+
+\begin{lstlisting}[basicstyle=\small\ttfamily]
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+...
+\end{lstlisting}
+
+El informe de síntesis proporciona información sobre la utilización de recursos, optimizaciones aplicadas, advertencias y errores encontrados durante el proceso de síntesis. A continuación se presenta un resumen de los aspectos más importantes del informe:
 
 \begin{enumerate}
-      \item Bart Broekman, Edwin Notenboom. \emph{Testing Embedded Software}. Addison-Wesley Professional, 2003. ISBN: 978-0201795238
-  % Agrega más referencias según sea necesario
+    \item El diseño fue sintetizado sin errores críticos ni advertencias críticas.
+    \item Se utilizaron un total de 80 DSPs y 120 bloques de memoria BRAM.
+    \item Se identificaron y eliminaron elementos de Unisim que no eran necesarios para la síntesis.
+    \item Se observaron algunas advertencias relacionadas con la optimización y el uso de elementos secuenciales no utilizados.
 \end{enumerate}
+
+Este informe proporciona una visión general del proceso de síntesis y las áreas que podrían requerir atención adicional para mejorar el diseño. Es importante revisar cada sección del informe cuidadosamente para garantizar un diseño óptimo y libre de errores.
+
+\newpage
+
+\section{Conclusiones}
+
+El diseño del Cordic se realizó de manera exitosa, utilizando un ancho de bits adecuado para los datos de entrada y salida, así como para los vectores $X$ e $Y$. Se implementó una tabla de valores atan para mejorar la eficiencia del algoritmo. Sin embargo, a pesar de los intentos de generar valores negativos para las coordenadas $X$ e $Y$, se observó que estas se desbordaban debido a la configuración de los cuadrantes y el ángulo de rotación. Por lo tanto, no fue posible disponer de valores de seno y coseno en el rango de coordenadas negativas.
+
+\begin{lstlisting}[language=Verilog]
+
+module cordic_rotator #(parameter c_parameter = 16)
+                      (input clock,
+                       input signed [31:0] angle,
+                       input signed [c_parameter-1:0] Xin,
+                       input signed [c_parameter-1:0] Yin,
+                       output signed [c_parameter:0] Xout,
+                       output signed [c_parameter:0] Yout);
+
+endmodule
+\end{lstlisting}
+
+
+El módulo VIO se diseñó para facilitar la verificación y depuración del sistema. Proporciona entradas y salidas virtuales para simular el comportamiento del diseño en un entorno controlado. Se utilizó un ancho de bits suficiente para los datos de entrada y salida del VIO. Esto permite una fácil observación de los valores de entrada y salida durante la simulación.
+
+
+El Cordic y el VIO se unificaron para formar un proyecto completo. El Cordic se utiliza para el cálculo de funciones trigonométricas, mientras que el VIO proporciona una interfaz para ingresar los datos de entrada y visualizar los resultados de salida. Esta integración permite una verificación exhaustiva del diseño y garantiza su funcionalidad correcta.
+
+\newpage
+\section{Bibliografía}
+
+\begin{thebibliography}{6}
+\bibitem{cordic_paper}
+Smith, S. W. (1971). "Cordic Trigonometry". RADC Technical Report.
+
+\bibitem{cordic_book}
+Walther, J. S. (1971). "A unified algorithm for elementary functions". AFIPS Conference Proceedings.
+
+\bibitem{cordic_survey}
+Volder, J. E. (1959). "The Cordic Trigonometric Computing Technique". IRE Transactions on Electronic Computers.
+
+\bibitem{verilog_book}
+Palnitkar, S. (2003). "Verilog HDL: A Guide to Digital Design and Synthesis". Prentice Hall.
+
+\bibitem{verilog_reference}
+IEEE Standard for SystemVerilog. (2017). IEEE Std 1800-2017.
+
+\bibitem{fpga_cookbook}
+Vohra, D. (2015). "FPGA Prototyping by Verilog Examples: Xilinx Spartan-3 Version". Wiley-IEEE Press.
+
+\end{thebibliography}
+
 
 
 

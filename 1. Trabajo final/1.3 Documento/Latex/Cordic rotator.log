@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=latex 2024.4.24)  24 APR 2024 11:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2024.4.24)  24 APR 2024 13:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -74,10 +74,10 @@ Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: dvips.def on input line 107.
+Package graphics Info: Driver file: pdftex.def on input line 107.
 
-(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\dvips.def
-File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
+(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen141
 \Gin@req@width=\dimen142
@@ -122,22 +122,21 @@ filtered.code.tex
 fg
 File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
 )
-Driver file for pgf: pgfsys-dvips.def
+Driver file for pgf: pgfsys-pdftex.def
 
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
-s-dvips.def
-File: pgfsys-dvips.def 2021/05/15 v3.1.9a (3.1.9a)
+s-pdftex.def
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
 
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
-s-common-postscript.def
-File: pgfsys-common-postscript.def 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@objectcount=\count198
+s-common-pdf.def
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 )))
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
 ssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count199
-\pgfsyssoftpath@bigbuffer@items=\count266
+\pgfsyssoftpath@smallbuffer@items=\count198
+\pgfsyssoftpath@bigbuffer@items=\count199
 )
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
 sprotocol.code.tex
@@ -149,11 +148,12 @@ Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: dvips.def on input line 227.
+Package xcolor Info: Driver file: pdftex.def on input line 227.
 
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex-dev/graphics\mathcolor.
 ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
 Package xcolor Info: Model `RGB' extended on input line 1369.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
@@ -175,7 +175,7 @@ code.tex)
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
 r.code.tex
 \pgfmath@dimen=\dimen153
-\pgfmath@count=\count267
+\pgfmath@count=\count266
 \pgfmath@box=\box52
 \pgfmath@toks=\toks26
 \pgfmath@stack@operand=\toks27
@@ -201,7 +201,7 @@ ions.misc.code.tex)
 ions.integerarithmetics.code.tex)))
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
 .code.tex
-\c@pgfmathroundto@lastzeros=\count268
+\c@pgfmathroundto@lastzeros=\count267
 ))
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
 tex)
@@ -241,7 +241,7 @@ File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfpic=\box53
 \pgf@hbox=\box54
 \pgf@layerbox@main=\box55
-\pgf@picture@serial@count=\count269
+\pgf@picture@serial@count=\count268
 )
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 egraphicstate.code.tex
@@ -276,8 +276,8 @@ File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 eshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@max=\dimen177
-\pgf@sys@shading@range@num=\count270
-\pgf@shadingcount=\count271
+\pgf@sys@shading@range@num=\count269
+\pgf@shadingcount=\count270
 )
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 eimage.code.tex
@@ -350,7 +350,7 @@ Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
 aryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@plot@mark@count=\count272
+\pgf@plot@mark@count=\count271
 \pgfplotmarksize=\dimen182
 )
 \tikz@lastx=\dimen183
@@ -365,19 +365,19 @@ File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \tikz@figbox@bg=\box59
 \tikz@tempbox=\box60
 \tikz@tempbox@bg=\box61
-\tikztreelevel=\count273
-\tikznumberofchildren=\count274
-\tikznumberofcurrentchild=\count275
-\tikz@fig@count=\count276
+\tikztreelevel=\count272
+\tikznumberofchildren=\count273
+\tikznumberofcurrentchild=\count274
+\tikz@fig@count=\count275
 
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
 matrix.code.tex
 File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfmatrixcurrentrow=\count277
-\pgfmatrixcurrentcolumn=\count278
-\pgf@matrix@numberofcolumns=\count279
+\pgfmatrixcurrentrow=\count276
+\pgfmatrixcurrentcolumn=\count277
+\pgf@matrix@numberofcolumns=\count278
 )
-\tikz@expandcount=\count280
+\tikz@expandcount=\count279
 
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibrarytopaths.code.tex
@@ -434,11 +434,11 @@ File: tikzlibraryfit.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
 \pgf@layerbox@connectionlayers=\box84
 \pgf@layerboxsaved@connectionlayers=\box85
-\pgfumlcd@ClassAttributesNum=\count281
-\pgfumlcd@ClassOperationsNum=\count282
-\pgfumlcd@ClassAbstractClassNum=\count283
-\pgfumlcd@ClassInterfaceNum=\count284
-\pgfumlcd@ClassSplitPartNum=\count285
+\pgfumlcd@ClassAttributesNum=\count280
+\pgfumlcd@ClassOperationsNum=\count281
+\pgfumlcd@ClassAbstractClassNum=\count282
+\pgfumlcd@ClassInterfaceNum=\count283
+\pgfumlcd@ClassSplitPartNum=\count284
 ))
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
@@ -467,9 +467,9 @@ x
 \pgftree@savechildx=\dimen259
 \pgftree@childy=\dimen260
 \pgftree@savechildy=\dimen261
-\pgftree@childi=\count286
-\pgftree@savechildi=\count287
-\pgftree@level=\count288
+\pgftree@childi=\count285
+\pgftree@savechildi=\count286
+\pgftree@level=\count287
 \pgftree@depth=\dimen262
 \pgf@subpic@hbox@children=\box86
 \pgf@subpic@minx@children=\dimen263
@@ -499,23 +499,18 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )) (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.st
 y
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count289
+\etb@tempcnta=\count288
 )
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
 e.sty
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
 Package: expl3 2022-07-04 L3 programming layer (loader) 
 
-(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-dvi
-ps.def
-File: l3backend-dvips.def 2022-07-01 L3 backend support: dvips
+(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def
+File: l3backend-pdftex.def 2022-07-01 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count289
 \l__pdf_internal_box=\box87
-\g__pdf_backend_object_int=\count290
-\l__pdf_backend_content_box=\box88
-\l__pdf_backend_model_box=\box89
-\g__pdf_backend_annotation_int=\count291
-\g__pdf_backend_link_int=\count292
-\g__pdf_backend_link_sf_int=\count293
 ))
 Package: xparse 2022-06-22 L3 Experimental document command parser
 )
@@ -580,7 +575,7 @@ Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip50
-\multirow@cntb=\count294
+\multirow@cntb=\count290
 \multirow@dima=\skip51
 \bigstrutjot=\dimen273
 )
@@ -590,19 +585,19 @@ Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 \col@sep=\dimen274
-\ar@mcellbox=\box90
+\ar@mcellbox=\box88
 \extrarowheight=\dimen275
 \NC@list=\toks35
 \extratabsurround=\skip52
 \backup@length=\skip53
-\ar@cellbox=\box91
+\ar@cellbox=\box89
 )
 \TX@col@width=\dimen276
 \TX@old@table=\dimen277
 \TX@old@col=\dimen278
 \TX@target=\dimen279
 \TX@delta=\dimen280
-\TX@cols=\count295
+\TX@cols=\count291
 \TX@ftn=\toks36
 )
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
@@ -610,9 +605,9 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip54
 \enit@outerparindent=\dimen281
 \enit@toks=\toks37
-\enit@inbox=\box92
-\enit@count@id=\count296
-\enitdp@description=\count297
+\enit@inbox=\box90
+\enit@count@id=\count292
+\enitdp@description=\count293
 )
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/grffile\grffile.sty
 Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
@@ -626,24 +621,24 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LTright=\skip56
 \LTpre=\skip57
 \LTpost=\skip58
-\LTchunksize=\count298
+\LTchunksize=\count294
 \LTcapwidth=\dimen282
-\LT@head=\box93
-\LT@firsthead=\box94
-\LT@foot=\box95
-\LT@lastfoot=\box96
-\LT@gbox=\box97
-\LT@cols=\count299
-\LT@rows=\count300
-\c@LT@tables=\count301
-\c@LT@chunks=\count302
+\LT@head=\box91
+\LT@firsthead=\box92
+\LT@foot=\box93
+\LT@lastfoot=\box94
+\LT@gbox=\box95
+\LT@cols=\count295
+\LT@rows=\count296
+\c@LT@tables=\count297
+\c@LT@chunks=\count298
 \LT@p@ftn=\toks38
 )
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.sty
 \wrapoverhang=\dimen283
 \WF@size=\dimen284
-\c@WF@wrappedlines=\count303
-\WF@box=\box98
+\c@WF@wrappedlines=\count299
+\WF@box=\box96
 \WF@everypar=\toks39
 Package: wrapfig 2003/01/31  v 3.6
 )
@@ -653,21 +648,21 @@ Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count304
+\c@r@tfl@t=\count300
 \rotFPtop=\skip59
 \rotFPbot=\skip60
-\rot@float@box=\box99
+\rot@float@box=\box97
 \rot@mess@toks=\toks40
 )
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/ulem\ulem.sty
-\UL@box=\box100
-\UL@hyphenbox=\box101
+\UL@box=\box98
+\UL@hyphenbox=\box99
 \UL@skip=\skip61
 \UL@hook=\toks41
 \UL@height=\dimen285
-\UL@pe=\count305
+\UL@pe=\count301
 \UL@pixel=\dimen286
-\ULC@box=\box102
+\ULC@box=\box100
 Package: ulem 2019/11/18
 \ULdepth=\dimen287
 )
@@ -691,19 +686,19 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count306
+\inf@bad=\count302
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count307
-\leftroot@=\count308
+\uproot@=\count303
+\leftroot@=\count304
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count309
-\DOTSCASE@=\count310
+\classnum@=\count305
+\DOTSCASE@=\count306
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box103
-\strutbox@=\box104
+\Mathstrutbox@=\box101
+\strutbox@=\box102
 LaTeX Info: Redefining \big on input line 722.
 LaTeX Info: Redefining \Big on input line 723.
 LaTeX Info: Redefining \bigg on input line 724.
@@ -711,20 +706,20 @@ LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen290
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count311
+\macc@depth=\count307
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count312
+\c@MaxMatrixCols=\count308
 \dotsspace@=\muskip16
-\c@parentequation=\count313
-\dspbrk@lvl=\count314
+\c@parentequation=\count309
+\dspbrk@lvl=\count310
 \tag@help=\toks43
-\row@=\count315
-\column@=\count316
-\maxfields@=\count317
+\row@=\count311
+\column@=\count312
+\maxfields@=\count313
 \andhelp@=\toks44
 \eqnshift@=\dimen291
 \alignsep@=\dimen292
@@ -747,13 +742,13 @@ Package: capt-of 2009/12/29 v0.2 standard captions outside of floats
 )
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2022/06/26 3.77 The Babel package
-\babel@savecnt=\count318
+\babel@savecnt=\count314
 \U@D=\dimen297
 \l@unhyphenated=\language79
 
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read3
-\bbl@dirlevel=\count319
+\bbl@dirlevel=\count315
 
 *************************************
 * Local config file bblopts.cfg used
@@ -766,7 +761,7 @@ File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
 df
 Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
 \es@quottoks=\toks47
-\es@quotdepth=\count320
+\es@quotdepth=\count316
 Package babel Info: Making " an active character on input line 570.
 Package babel Info: Making . an active character on input line 675.
 Package babel Info: Making < an active character on input line 722.
@@ -778,24 +773,24 @@ Package babel Info: Importing font and identification data for spanish
 (babel)             from babel-es.ini. Reported on input line 11.
 )
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count321
-\lst@gtempboxa=\box105
+\lst@mode=\count317
+\lst@gtempboxa=\box103
 \lst@token=\toks48
-\lst@length=\count322
+\lst@length=\count318
 \lst@currlwidth=\dimen298
-\lst@column=\count323
-\lst@pos=\count324
+\lst@column=\count319
+\lst@pos=\count320
 \lst@lostspace=\dimen299
 \lst@width=\dimen300
-\lst@newlines=\count325
-\lst@lineno=\count326
+\lst@newlines=\count321
+\lst@lineno=\count322
 \lst@maxwidth=\dimen301
 
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count327
-\lst@skipnumbers=\count328
-\lst@framebox=\box106
+\c@lstnumber=\count323
+\lst@skipnumbers=\count324
+\lst@framebox=\box104
 )
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2020/03/24 1.8d listings configuration
@@ -806,7 +801,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip65
 \bibsep=\skip66
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count329
+\c@NAT@ctr=\count325
 )
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2022-06-20 v7.00s Hypertext links for LaTeX
@@ -828,7 +823,7 @@ Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
+Package pdftexcmds Info: \pdfdraftmode found.
 )
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.s
 ty
@@ -864,11 +859,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count330
+\c@section@level=\count326
 )
 \@linkdim=\dimen302
-\Hy@linkcounter=\count331
-\Hy@pagecounter=\count332
+\Hy@linkcounter=\count327
+\Hy@pagecounter=\count328
  (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2022-06-20 v7.00s Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -879,7 +874,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count333
+\Hy@SavedSpaceFactor=\count329
  (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2022-06-20 v7.00s Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -892,7 +887,7 @@ Package hyperref Info: Plain pages OFF on input line 4177.
 Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4408.
-\c@Hy@tempcnt=\count334
+\c@Hy@tempcnt=\count330
 
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
@@ -909,7 +904,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count335
+\Fld@menulength=\count331
 \Field@Width=\dimen304
 \Fld@charsize=\dimen305
 Package hyperref Info: Hyper figures OFF on input line 6024.
@@ -924,33 +919,26 @@ Package hyperref Info: PDF/A mode OFF on input line 6054.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count336
-\c@Item=\count337
-\c@Hfootnote=\count338
+\Hy@abspage=\count332
+\c@Item=\count333
+\c@Hfootnote=\count334
 )
-Package hyperref Info: Driver (default): hdvips.
-(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hdvips.def
-File: hdvips.def 2022-06-20 v7.00s Hyperref driver for dvips
-
-(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pdfmark.def
-File: pdfmark.def 2022-06-20 v7.00s Hyperref definitions for pdfmark specials
-\pdf@docset=\toks49
-\pdf@box=\box107
-\pdf@toks=\toks50
-\pdf@defaulttoks=\toks51
-\HyField@AnnotCount=\count339
-\Fld@listcount=\count340
-\c@bookmark@seq@number=\count341
-
-(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
-echeck.sty
-Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+Package hyperref Info: Driver (autodetected): hpdftex.
+(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2022-06-20 v7.00s Hyperref driver for pdfTeX
 
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
+\Fld@listcount=\count335
+\c@bookmark@seq@number=\count336
+
+(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
+echeck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
 ounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
@@ -959,16 +947,16 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
 \Hy@SectionHShift=\skip67
-))
+)
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count342
-\Gm@cntv=\count343
-\c@Gm@tempcnt=\count344
+\Gm@cnth=\count337
+\Gm@cntv=\count338
+\c@Gm@tempcnt=\count339
 \Gm@bindingoffset=\dimen306
 \Gm@wd@mp=\dimen307
 \Gm@odd@mp=\dimen308
@@ -977,7 +965,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutheight=\dimen311
 \Gm@layouthoffset=\dimen312
 \Gm@layoutvoffset=\dimen313
-\Gm@dimlist=\toks52
+\Gm@dimlist=\toks49
 
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
@@ -995,7 +983,7 @@ rs
 )
 
 Package hyperref Warning: Invalid language identifier ` spanish '
-(hyperref)                for option `pdflang' (RFC 3066) on input line 50.
+(hyperref)                for option `pdflang' (RFC 3066) on input line 51.
 
 (Cordic rotator.aux
 LaTeX Info: Redefining \. on input line 22.
@@ -1022,46 +1010,66 @@ LaTeX Warning: Label `fig:esquema' multiply defined.
 
 LaTeX Warning: Label `fig:esquema' multiply defined.
 
-
-LaTeX Warning: Label `fig:esquema' multiply defined.
-
-
-LaTeX Warning: Label `fig:esquema' multiply defined.
-
 )
 \openout1 = `"Cordic rotator.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Info: Redefining \. on input line 54.
-LaTeX Info: Redefining \% on input line 54.
-\c@lstlisting=\count345
-Package hyperref Info: Link coloring OFF on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+
+(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count340
+\scratchdimen=\dimen314
+\scratchbox=\box105
+\nofMPsegments=\count341
+\nofMParguments=\count342
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count343
+\MPscratchDim=\dimen315
+\MPnumerator=\count344
+\makeMPintoPDFobject=\count345
+\everyMPtoPDFconversion=\toks51
+)
+(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+LaTeX Info: Redefining \. on input line 55.
+LaTeX Info: Redefining \% on input line 55.
+\c@lstlisting=\count346
+Package hyperref Info: Link coloring OFF on input line 55.
  (Cordic rotator.out) (Cordic rotator.out)
 \@outlinefile=\write4
 \openout4 = `"Cordic rotator.out"'.
 
 
 *geometry* driver: auto-detecting
-*geometry* detected driver: dvips
+*geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
-* driver: dvips
+* driver: pdftex
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -1092,32 +1100,16 @@ Package hyperref Info: Link coloring OFF on input line 54.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+<Figuras/logoFIUBA.pdf, id=122, 460.9062pt x 153.61644pt>
+File: Figuras/logoFIUBA.pdf Graphic file (type pdf)
+<use Figuras/logoFIUBA.pdf>
+Package pdftex.def Info: Figuras/logoFIUBA.pdf  used on input line 65.
+(pdftex.def)             Requested size: 469.47049pt x 156.4804pt.
+[1
 
-! LaTeX Error: Cannot determine size of graphic in Figuras/logoFIUBA.pdf (no Bo
-undingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.64 ...[width=1\textwidth]{Figuras/logoFIUBA.pdf}
-                                                   % Ruta al logo de FIUBA
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: Figuras/logoFIUBA.pdf Graphic file (type eps)
-<Figuras/logoFIUBA.pdf> [1
-
-]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[2] (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd)
+{C:/Users/ktzam/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Figuras/lo
+goFIUBA.pdf>]
+(C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd)
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1127,7 +1119,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[3]
+[2]
 
 LaTeX Warning: No \author given.
 
@@ -1140,12 +1132,12 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-[4])
+[3])
 \tf@toc=\write5
 \openout5 = `"Cordic rotator.toc"'.
 
-LaTeX Info: Redefining \. on input line 116.
-LaTeX Info: Redefining \% on input line 116.
+LaTeX Info: Redefining \. on input line 117.
+LaTeX Info: Redefining \% on input line 117.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1155,9 +1147,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
+[4]
+LaTeX Info: Redefining \. on input line 149.
+LaTeX Info: Redefining \% on input line 149.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.6104pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.6104pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
+
 [5]
-LaTeX Info: Redefining \. on input line 148.
-LaTeX Info: Redefining \% on input line 148.
+LaTeX Info: Redefining \. on input line 152.
+LaTeX Info: Redefining \% on input line 152.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1168,8 +1172,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
 
 [6]
-LaTeX Info: Redefining \. on input line 168.
-LaTeX Info: Redefining \% on input line 168.
+LaTeX Info: Redefining \. on input line 174.
+LaTeX Info: Redefining \% on input line 174.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1180,10 +1184,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 185.
-LaTeX Info: Redefining \% on input line 185.
+LaTeX Info: Redefining \. on input line 200.
+LaTeX Info: Redefining \% on input line 200.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1194,8 +1196,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [8]
-LaTeX Info: Redefining \. on input line 210.
-LaTeX Info: Redefining \% on input line 210.
+LaTeX Info: Redefining \. on input line 214.
+LaTeX Info: Redefining \% on input line 214.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1215,8 +1217,10 @@ File: lstlang2.sty 2020/03/24 1.8d listings language file
 (C:\Users\ktzam\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang3.sty
 File: lstlang3.sty 2020/03/24 1.8d listings language file
 )
-LaTeX Info: Redefining \. on input line 234.
-LaTeX Info: Redefining \% on input line 234.
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 241.
+LaTeX Info: Redefining \. on input line 244.
+LaTeX Info: Redefining \% on input line 244.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1227,10 +1231,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
 
 [10]
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 240.
-LaTeX Info: Redefining \. on input line 265.
-LaTeX Info: Redefining \% on input line 265.
+LaTeX Info: Redefining \. on input line 274.
+LaTeX Info: Redefining \% on input line 274.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1241,17 +1243,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
 
 [11]
-Overfull \hbox (16.86496pt too wide) in paragraph at lines 278--279
-[][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (16.86496pt too wide) in paragraph at lines 279--280
+[][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (30.96164pt too wide) in paragraph at lines 291--292
-[][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (30.96164pt too wide) in paragraph at lines 292--293
+[][][][][][][][][][][][][][][][][][] 
  []
 
-LaTeX Info: Redefining \. on input line 299.
-LaTeX Info: Redefining \% on input line 299.
+LaTeX Info: Redefining \. on input line 304.
+LaTeX Info: Redefining \% on input line 304.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.61858pt, for example:
@@ -1261,12 +1263,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
 
 [12]
-Overfull \hbox (30.96164pt too wide) in paragraph at lines 305--306
-[][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (30.96164pt too wide) in paragraph at lines 306--307
+[][][][][][][][][][][][][][][][][][] 
  []
 
-LaTeX Info: Redefining \. on input line 331.
-LaTeX Info: Redefining \% on input line 331.
+
+Overfull \hbox (38.00998pt too wide) in paragraph at lines 332--333
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \vbox (badness 1478) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 339.
+LaTeX Info: Redefining \% on input line 339.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.6104pt, for example:
@@ -1276,12 +1287,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
 
 [13]
-Overfull \hbox (38.00998pt too wide) in paragraph at lines 331--332
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
+Underfull \vbox (badness 2735) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 365.
-LaTeX Info: Redefining \% on input line 365.
+LaTeX Info: Redefining \. on input line 372.
+LaTeX Info: Redefining \% on input line 372.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.61858pt, for example:
@@ -1291,8 +1301,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
 
 [14]
-LaTeX Info: Redefining \. on input line 412.
-LaTeX Info: Redefining \% on input line 412.
+LaTeX Info: Redefining \. on input line 414.
+LaTeX Info: Redefining \% on input line 414.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1303,34 +1313,29 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
 
 [15]
-File: ./Figuras/New_project.png Graphic file (type eps)
- <./Figuras/New_project.png>
-File: ./Figuras/add_source.png Graphic file (type eps)
- <./Figuras/add_source.png>
-
-! LaTeX Error: Cannot determine size of graphic in ./Figuras/Run_simulacion_vis
-ual.png (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.434 ...dth]{./Figuras/Run_simulacion_visual.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-File: ./Figuras/Run_simulacion_visual.png Graphic file (type eps)
-<./Figuras/Run_simulacion_visual.png>
-File: ./Figuras/Resultado.png Graphic file (type eps)
- <./Figuras/Resultado.png>
-File: ./Figuras/Run_simulacion_visual.png Graphic file (type eps)
-
-<./Figuras/Run_simulacion_visual.png>
-Underfull \vbox (badness 1521) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 459.
-LaTeX Info: Redefining \% on input line 459.
+<./Figuras/New_project.png, id=338, 1924.94156pt x 734.745pt>
+File: ./Figuras/New_project.png Graphic file (type png)
+<use ./Figuras/New_project.png>
+Package pdftex.def Info: ./Figuras/New_project.png  used on input line 417.
+(pdftex.def)             Requested size: 375.57782pt x 143.35878pt.
+<./Figuras/add_source.png, id=340, 1926.44719pt x 737.00343pt>
+File: ./Figuras/add_source.png Graphic file (type png)
+<use ./Figuras/add_source.png>
+Package pdftex.def Info: ./Figuras/add_source.png  used on input line 425.
+(pdftex.def)             Requested size: 375.57782pt x 143.67572pt.
+<./Figuras/Run_simulacion_visual.png, id=341, 1926.44719pt x 767.86874pt>
+File: ./Figuras/Run_simulacion_visual.png Graphic file (type png)
+<use ./Figuras/Run_simulacion_visual.png>
+Package pdftex.def Info: ./Figuras/Run_simulacion_visual.png  used on input lin
+e 438.
+(pdftex.def)             Requested size: 375.57782pt x 149.6928pt.
+<./Figuras/Resultado.png, id=342, 390.70969pt x 219.06844pt>
+File: ./Figuras/Resultado.png Graphic file (type png)
+<use ./Figuras/Resultado.png>
+Package pdftex.def Info: ./Figuras/Resultado.png  used on input line 450.
+(pdftex.def)             Requested size: 281.68515pt x 157.94641pt.
+LaTeX Info: Redefining \. on input line 460.
+LaTeX Info: Redefining \% on input line 460.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1340,9 +1345,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
 
-[16]
-LaTeX Info: Redefining \. on input line 490.
-LaTeX Info: Redefining \% on input line 490.
+[16 <./Figuras/New_project.png> <./Figuras/add_source.png>]
+<./Figuras/IP_VIO.png, id=356, 1153.911pt x 612.48825pt>
+File: ./Figuras/IP_VIO.png Graphic file (type png)
+<use ./Figuras/IP_VIO.png>
+Package pdftex.def Info: ./Figuras/IP_VIO.png  used on input line 469.
+(pdftex.def)             Requested size: 375.57782pt x 199.34604pt.
+LaTeX Info: Redefining \. on input line 477.
+LaTeX Info: Redefining \% on input line 477.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1352,9 +1362,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
 
-[17]
-LaTeX Info: Redefining \. on input line 490.
-LaTeX Info: Redefining \% on input line 490.
+[17 <./Figuras/Run_simulacion_visual.png> <./Figuras/Resultado.png>]
+<./Figuras/schematic.png, id=366, 1417.54594pt x 379.4175pt>
+File: ./Figuras/schematic.png Graphic file (type png)
+<use ./Figuras/schematic.png>
+Package pdftex.def Info: ./Figuras/schematic.png  used on input line 485.
+(pdftex.def)             Requested size: 469.47049pt x 125.65395pt.
+<./Figuras/squematic_cordic.png, id=367, 1129.821pt x 542.62724pt>
+File: ./Figuras/squematic_cordic.png Graphic file (type png)
+<use ./Figuras/squematic_cordic.png>
+Package pdftex.def Info: ./Figuras/squematic_cordic.png  used on input line 494
+.
+(pdftex.def)             Requested size: 469.47049pt x 225.47589pt.
+LaTeX Info: Redefining \. on input line 506.
+LaTeX Info: Redefining \% on input line 506.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1364,9 +1385,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
 
-[18]
-LaTeX Info: Redefining \. on input line 490.
-LaTeX Info: Redefining \% on input line 490.
+[18 <./Figuras/IP_VIO.png> <./Figuras/schematic.png>]
+<./Figuras/bitsteam_complete.png, id=377, 957.5775pt x 767.86874pt>
+File: ./Figuras/bitsteam_complete.png Graphic file (type png)
+<use ./Figuras/bitsteam_complete.png>
+Package pdftex.def Info: ./Figuras/bitsteam_complete.png  used on input line 51
+1.
+(pdftex.def)             Requested size: 305.15294pt x 244.69194pt.
+LaTeX Info: Redefining \. on input line 518.
+LaTeX Info: Redefining \% on input line 518.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1376,9 +1403,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
 
-[19]
-LaTeX Info: Redefining \. on input line 490.
-LaTeX Info: Redefining \% on input line 490.
+[19 <./Figuras/squematic_cordic.png> <./Figuras/bitsteam_complete.png>]
+<./Figuras/archivo_bit.png, id=388, 593.96906pt x 387.69844pt>
+File: ./Figuras/archivo_bit.png Graphic file (type png)
+<use ./Figuras/archivo_bit.png>
+Package pdftex.def Info: ./Figuras/archivo_bit.png  used on input line 522.
+(pdftex.def)             Requested size: 305.15294pt x 199.19069pt.
+LaTeX Info: Redefining \. on input line 532.
+LaTeX Info: Redefining \% on input line 532.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1388,9 +1420,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.61858pt}.
 
-[20]
-LaTeX Info: Redefining \. on input line 490.
-LaTeX Info: Redefining \% on input line 490.
+[20 <./Figuras/archivo_bit.png>]
+LaTeX Info: Redefining \. on input line 558.
+LaTeX Info: Redefining \% on input line 558.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1400,7 +1432,31 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.6104pt}.
 
-[21] (Cordic rotator.aux
+[21]
+LaTeX Info: Redefining \. on input line 583.
+LaTeX Info: Redefining \% on input line 583.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[22]
+LaTeX Info: Redefining \. on input line 610.
+LaTeX Info: Redefining \% on input line 610.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[23] (Cordic rotator.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 )
@@ -1408,15 +1464,42 @@ LaTeX Info: Redefining \% on input line 22.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"Cordic rotator".out' has not changed.
-(rerunfilecheck)             Checksum: 81252A45BFE641E67937CBBA06B6C0C8;4120.
+(rerunfilecheck)             Checksum: 013DE1C6EE6372E5B994753DDBE0FA6A;4869.
  ) 
 Here is how much of TeX's memory you used:
- 28735 strings out of 478339
- 555869 string characters out of 2836726
- 1060552 words of memory out of 3000000
- 46599 multiletter control sequences out of 15000+600000
- 486785 words of font info for 73 fonts, out of 8000000 for 9000
+ 29338 strings out of 478338
+ 564042 string characters out of 2836700
+ 1056814 words of memory out of 3000000
+ 47003 multiletter control sequences out of 15000+600000
+ 487868 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 115i,12n,118p,2408b,2140s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 115i,12n,118p,862b,1958s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm
+0600.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ectt1095.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecrm0800.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ectt1440.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\ktzam\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsl1200.pk> <C:\Users\ktzam\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk> <C:\Users\ktzam\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\ktzam\
+AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk> <C:\Users\
+ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\
+Users\ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk
+> <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1
+728.pk> <C:\Users\ktzam\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600
+\ecbx2074.pk><C:/Users/ktzam/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmmi12.pfb><C:/Users/ktzam/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmmi8.pfb><C:/Users/ktzam/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/ktzam/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/ktzam/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ktzam/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on "Cordic rotator.pdf" (23 pages, 1516365 bytes).
+PDF statistics:
+ 1021 PDF objects out of 1200 (max. 8388607)
+ 200 named destinations out of 1000 (max. 500000)
+ 295 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on "Cordic rotator.dvi" (21 pages, 97856 bytes).
