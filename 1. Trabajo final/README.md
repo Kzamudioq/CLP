@@ -13,7 +13,7 @@ El repositorio está organizado de la siguiente manera:
    - Este directorio contiene la implementación en Verilog del algoritmo CORDIC para calcular el seno y el coseno de un ángulo dado.
 
 2. **ip_cordic**
-   - Aquí encontrarás otra implementación del algoritmo CORDIC utilizando una IP (Propiedad Intelectual) específica.
+   - Aquí encontrarás otra implementación del algoritmo CORDIC utilizando una IP (Propiedad VIVADO) específica.
 
 3. **Documentación**
    - Este directorio incluye documentación detallada sobre el algoritmo CORDIC, cómo utilizar las implementaciones proporcionadas y cómo integrarlas en tus proyectos.
