@@ -39,7 +39,3 @@ Para utilizar estas implementaciones del algoritmo CORDIC en tu proyecto, sigue 
 ## Contribución
 
 Las contribuciones son bienvenidas. Si deseas mejorar las implementaciones existentes o agregar nuevas características, por favor consulta la documentación sobre cómo contribuir.
-
-## Licencia
-
-Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para obtener más información.
