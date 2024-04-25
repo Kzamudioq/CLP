@@ -1,4 +1,4 @@
-# Implementación del Algoritmo CORDIC en Verilog
+#  CORDIC ROTADOR
 
 ## Qué es CORDIC y sus Aplicaciones
 
